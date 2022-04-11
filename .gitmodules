@@ -1,0 +1,4 @@
+[submodule "minkasi_wrapper/extern/minkasi"]
+	path = minkasi_wrapper/extern/minkasi
+	url = https://github.com/toltec-astro/minkasi.git
+	branch = main
