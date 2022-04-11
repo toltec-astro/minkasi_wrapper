@@ -1,5 +1,5 @@
-A Wrapper for the Minkasi Map Maker.
-------------------------------------
+A Wrapper for the Minkasi Map Maker
+-----------------------------------
 
 .. image:: http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat
     :target: http://www.astropy.org
@@ -26,23 +26,51 @@ On macOS, this can be done with Homebrew:
 
 .. code:: text
 
-   $ brew install llvm libomp fftw3
-   $ export CC=/usr/local/opt/bin/clang
-   $ export LDFLAGS=-L/usr/local/opt/llvm/lib
-   $ export CPPFLAGS=-I/usr/local/opt/llvm/include
+    $ brew install llvm libomp fftw3
+    $ export CC=/usr/local/opt/bin/clang
+    $ export LDFLAGS=-L/usr/local/opt/llvm/lib
+    $ export CPPFLAGS=-I/usr/local/opt/llvm/include
 
-On Ubuntu, do:
+On Ubuntu, install the packages with:
 
 .. code:: text
 
-    TODO: add Ubuntu instruction.
+    $ sudo apt install gcc-10 fftw-dev
+
+One can also use customized FFTW installation. This leverages the
+``pkg-config`` stub that gets created in the fftw lib path:
+
+.. code:: text
+
+    $ export PKG_CONFIG_PATH=/path/to/fftw3/install/prefix/lib/pkgconfig
 
 
-Finally, install minkasi_wrapper with
+Once the preparation is done, install minkasi_wrapper with ``pip``:
 
 .. code:: text
 
     $ pip install git+https://github.com/toltec-astro/minkasi_wrapper
+
+
+Usage
+-----
+
+High-level API
+--------------
+
+To be implemented.
+
+Low-level API
+-------------
+
+The ``minkasi_wrapper`` module exposes the low level ``minkasi.py`` API
+as the ``minkasi_wrapper.minkasi`` submodule:
+
+.. code:: python
+
+    from minkasi_wrapper import minkasi
+
+    tod = minkasi.Tod(...)
 
 
 License
