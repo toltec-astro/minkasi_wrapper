@@ -56,12 +56,12 @@ Usage
 -----
 
 High-level API
---------------
+==============
 
 To be implemented.
 
 Low-level API
--------------
+=============
 
 The ``minkasi_wrapper`` module exposes the low level ``minkasi.py`` API
 as the ``minkasi_wrapper.minkasi`` submodule:
