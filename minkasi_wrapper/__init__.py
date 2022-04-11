@@ -6,4 +6,7 @@
 from ._astropy_init import *   # noqa
 # ----------------------------------------------------------------------------
 
-__all__ = []
+from .extern.minkasi import minkasi
+
+
+__all__ = ['minkasi']
