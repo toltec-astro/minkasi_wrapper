@@ -2,6 +2,9 @@
 
 requires = ["setuptools",
             "setuptools_scm",
-            "wheel"]
+            "wheel",
+            "extension-helpers",
+            "cython"
+            ]
 
 build-backend = 'setuptools.build_meta'

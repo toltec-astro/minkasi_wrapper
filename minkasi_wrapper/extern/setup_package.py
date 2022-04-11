@@ -38,6 +38,9 @@ def get_extensions():
 
     # add fftw3 config
     cfg = pkgconfig('fftw3', cfg)
+    # this only added the non-threaded libs, and we also need the threaded
+    # ones
+    cfg['libraries'].extend(['fftw3_threads', 'fftw3f', 'fftw3f_threads'])
 
     if get_compiler() in ('unix', 'mingw32'):
         cfg['extra_compile_args'].extend([
