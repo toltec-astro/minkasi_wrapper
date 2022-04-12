@@ -73,6 +73,11 @@ as the ``minkasi_wrapper.minkasi`` submodule:
     tod = minkasi.Tod(...)
 
 
+Please see the
+`API documentation <https://toltec-astro.github.io/minkasi_wrapper>`_
+for details.
+
+
 License
 -------
 
