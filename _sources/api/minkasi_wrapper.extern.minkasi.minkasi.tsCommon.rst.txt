@@ -1,0 +1,29 @@
+tsCommon
+========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsCommon
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsCommon.axpy
+      ~tsCommon.clear
+      ~tsCommon.copy
+      ~tsCommon.dot
+      ~tsCommon.map2tod
+      ~tsCommon.tod2map
+      ~tsCommon.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: map2tod
+   .. automethod:: tod2map
+   .. automethod:: write

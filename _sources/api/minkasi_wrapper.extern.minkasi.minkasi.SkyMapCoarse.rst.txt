@@ -1,0 +1,27 @@
+SkyMapCoarse
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: SkyMapCoarse
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~SkyMapCoarse.clear_caches
+      ~SkyMapCoarse.copy
+      ~SkyMapCoarse.get_caches
+      ~SkyMapCoarse.get_pix
+      ~SkyMapCoarse.map2tod
+      ~SkyMapCoarse.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: clear_caches
+   .. automethod:: copy
+   .. automethod:: get_caches
+   .. automethod:: get_pix
+   .. automethod:: map2tod
+   .. automethod:: tod2map

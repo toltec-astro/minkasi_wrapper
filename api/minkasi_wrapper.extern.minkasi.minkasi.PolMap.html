@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PolMap &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SkyMap" href="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html" />
+    <link rel="prev" title="NoiseWhiteNotch" href="minkasi_wrapper.extern.minkasi.minkasi.NoiseWhiteNotch.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">MinkasiWrapper</span><span id="logotext2"></span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html" title="SkyMap">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.NoiseWhiteNotch.html" title="NoiseWhiteNotch">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	 &#187;
+      </li>
+      
+      <li>PolMap</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="polmap">
+<h1>PolMap<a class="headerlink" href="#polmap" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minkasi_wrapper.extern.minkasi.minkasi.</span></span><span class="sig-name descname"><span class="pre">PolMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixsize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poltag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'I'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CAR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosdec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mywcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ipix'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purge_pixellization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_equ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.assign" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a>(arr)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.axpy" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.axpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">axpy</span></code></a>(map, a)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear_caches" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear_caches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_caches</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.copy" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.dot" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>(map)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_caches" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_caches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_caches</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_pix" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_pix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pix</span></code></a>(tod[, savepix])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.invert" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.invert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invert</span></code></a>([thresh])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.map2tod" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.map2tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map2tod</span></code></a>(tod, dat[, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.mpi_reduce" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.mpi_reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mpi_reduce</span></code></a>([chunksize])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.pix_from_radec" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.pix_from_radec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pix_from_radec</span></code></a>(ra, dec)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.r_th_maps" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.r_th_maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r_th_maps</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.set_polstate" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.set_polstate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_polstate</span></code></a>(poltag)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.tod2map" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.tod2map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map</span></code></a>(tod, dat[, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.write" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>([fname])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.assign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.assign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.axpy">
+<span class="sig-name descname"><span class="pre">axpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.axpy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.axpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear_caches">
+<span class="sig-name descname"><span class="pre">clear_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.clear_caches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.clear_caches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.dot">
+<span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_caches">
+<span class="sig-name descname"><span class="pre">get_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.get_caches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_caches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_pix">
+<span class="sig-name descname"><span class="pre">get_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.get_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.get_pix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.invert">
+<span class="sig-name descname"><span class="pre">invert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.invert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.invert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.map2tod">
+<span class="sig-name descname"><span class="pre">map2tod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_omp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.map2tod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.map2tod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.mpi_reduce">
+<span class="sig-name descname"><span class="pre">mpi_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.mpi_reduce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.mpi_reduce" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.pix_from_radec">
+<span class="sig-name descname"><span class="pre">pix_from_radec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.pix_from_radec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.pix_from_radec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.r_th_maps">
+<span class="sig-name descname"><span class="pre">r_th_maps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.r_th_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.r_th_maps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.set_polstate">
+<span class="sig-name descname"><span class="pre">set_polstate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poltag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.set_polstate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.set_polstate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.tod2map">
+<span class="sig-name descname"><span class="pre">tod2map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_omp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.tod2map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.tod2map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.PolMap.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'map.fits'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#PolMap.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.PolMap.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">PolMap</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/minkasi_wrapper.extern.minkasi.minkasi.PolMap.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2022, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
+    Last built 12 Apr 2022. <br/>
+  </p>
+</footer>
+  </body>
+</html>

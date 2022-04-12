@@ -1,0 +1,6 @@
+mask_dict
+=========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: mask_dict

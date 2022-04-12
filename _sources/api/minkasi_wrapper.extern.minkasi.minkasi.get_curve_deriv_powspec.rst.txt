@@ -1,0 +1,6 @@
+get_curve_deriv_powspec
+=======================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: get_curve_deriv_powspec

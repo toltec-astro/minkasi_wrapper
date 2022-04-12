@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>MinkasiWrapper &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-astropy.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="apply_noise" href="api/minkasi_wrapper.extern.minkasi.minkasi.apply_noise.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="#"><span id="logotext1">MinkasiWrapper</span><span id="logotext2"></span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="genindex.html">Index</a></li>
+    <li><a title="Module Index" href="py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="api/minkasi_wrapper.extern.minkasi.minkasi.apply_noise.html" title="apply_noise">
+	  next &raquo;
+	</a>
+      </li>
+      <li>
+	<a href="#">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="minkasiwrapper">
+<h1>MinkasiWrapper<a class="headerlink" href="#minkasiwrapper" title="Permalink to this headline">¶</a></h1>
+<section id="a-wrapper-for-the-minkasi-map-maker">
+<h2>A Wrapper for the Minkasi Map Maker<a class="headerlink" href="#a-wrapper-for-the-minkasi-map-maker" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="http://www.astropy.org"><img alt="Powered by Astropy Badge" src="http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat" /></a>
+<p>This package wraps the Minkasi map mapker as an external map maker package
+for the TolTEC camera.</p>
+</section>
+<section id="minkasi-map-maker">
+<h2>Minkasi Map Maker<a class="headerlink" href="#minkasi-map-maker" title="Permalink to this headline">¶</a></h2>
+<p>Minkasi is a Python/C-based mapper for Mustang.</p>
+<p>TODO: add credit and license of Minkasi.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Minkasi depends on fftw3, and requires an OpenMP-capable C compiler to work.</p>
+<p>On macOS, this can be done with Homebrew:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ brew install llvm libomp fftw3
+$ export CC=/usr/local/opt/bin/clang
+$ export LDFLAGS=-L/usr/local/opt/llvm/lib
+$ export CPPFLAGS=-I/usr/local/opt/llvm/include
+</pre></div>
+</div>
+<p>On Ubuntu, install the packages with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ sudo apt install gcc-10 fftw-dev
+</pre></div>
+</div>
+<p>One can also use customized FFTW installation. This leverages the
+<code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> stub that gets created in the fftw lib path:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ export PKG_CONFIG_PATH=/path/to/fftw3/install/prefix/lib/pkgconfig
+</pre></div>
+</div>
+<p>Once the preparation is done, install minkasi_wrapper with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/toltec-astro/minkasi_wrapper
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<section id="high-level-api">
+<h3>High-level API<a class="headerlink" href="#high-level-api" title="Permalink to this headline">¶</a></h3>
+<p>To be implemented.</p>
+</section>
+<section id="low-level-api">
+<h3>Low-level API<a class="headerlink" href="#low-level-api" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">minkasi_wrapper</span></code> module exposes the low level <code class="docutils literal notranslate"><span class="pre">minkasi.py</span></code> API
+as the <code class="docutils literal notranslate"><span class="pre">minkasi_wrapper.minkasi</span></code> submodule:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">minkasi_wrapper</span> <span class="kn">import</span> <span class="n">minkasi</span>
+
+<span class="n">tod</span> <span class="o">=</span> <span class="n">minkasi</span><span class="o">.</span><span class="n">Tod</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>This project is Copyright (c) Zhiyuan Ma and licensed under
+the terms of the BSD 3-Clause license. This package is based upon
+the <a class="reference external" href="https://github.com/astropy/package-template">Astropy package template</a>
+which is licensed under the BSD 3-clause license. See the licenses folder for
+more information.</p>
+</section>
+</section>
+<section id="reference-api">
+<h1>Reference/API<a class="headerlink" href="#reference-api" title="Permalink to this headline">¶</a></h1>
+<section id="module-minkasi_wrapper">
+<span id="minkasi-wrapper-package"></span><h2>minkasi_wrapper Package<a class="headerlink" href="#module-minkasi_wrapper" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-minkasi_wrapper.extern.minkasi.minkasi">
+<span id="minkasi-wrapper-extern-minkasi-minkasi-module"></span><h2>minkasi_wrapper.extern.minkasi.minkasi Module<a class="headerlink" href="#module-minkasi_wrapper.extern.minkasi.minkasi" title="Permalink to this headline">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.apply_noise.html#minkasi_wrapper.extern.minkasi.minkasi.apply_noise" title="minkasi_wrapper.extern.minkasi.minkasi.apply_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_noise</span></code></a>(tod[, dat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.barrier.html#minkasi_wrapper.extern.minkasi.minkasi.barrier" title="minkasi_wrapper.extern.minkasi.minkasi.barrier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">barrier</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.cut_blacklist.html#minkasi_wrapper.extern.minkasi.minkasi.cut_blacklist" title="minkasi_wrapper.extern.minkasi.minkasi.cut_blacklist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cut_blacklist</span></code></a>(tod_names, blacklist)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.decimate.html#minkasi_wrapper.extern.minkasi.minkasi.decimate" title="minkasi_wrapper.extern.minkasi.minkasi.decimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decimate</span></code></a>(vec[, nrep])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.derivs_from_elliptical_gauss.html#minkasi_wrapper.extern.minkasi.minkasi.derivs_from_elliptical_gauss" title="minkasi_wrapper.extern.minkasi.minkasi.derivs_from_elliptical_gauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivs_from_elliptical_gauss</span></code></a>(params, tod, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.derivs_from_elliptical_isobeta.html#minkasi_wrapper.extern.minkasi.minkasi.derivs_from_elliptical_isobeta" title="minkasi_wrapper.extern.minkasi.minkasi.derivs_from_elliptical_isobeta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivs_from_elliptical_isobeta</span></code></a>(params, tod, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.derivs_from_gauss_c.html#minkasi_wrapper.extern.minkasi.minkasi.derivs_from_gauss_c" title="minkasi_wrapper.extern.minkasi.minkasi.derivs_from_gauss_c"><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivs_from_gauss_c</span></code></a>(params, tod, *args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.derivs_from_isobeta_c.html#minkasi_wrapper.extern.minkasi.minkasi.derivs_from_isobeta_c" title="minkasi_wrapper.extern.minkasi.minkasi.derivs_from_isobeta_c"><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivs_from_isobeta_c</span></code></a>(params, tod, *args, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.derivs_from_map.html#minkasi_wrapper.extern.minkasi.minkasi.derivs_from_map" title="minkasi_wrapper.extern.minkasi.minkasi.derivs_from_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivs_from_map</span></code></a>(pars, tod, fun, map, dpar[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.downsample_array_r2r.html#minkasi_wrapper.extern.minkasi.minkasi.downsample_array_r2r" title="minkasi_wrapper.extern.minkasi.minkasi.downsample_array_r2r"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample_array_r2r</span></code></a>(arr, fac)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.downsample_tod.html#minkasi_wrapper.extern.minkasi.minkasi.downsample_tod" title="minkasi_wrapper.extern.minkasi.minkasi.downsample_tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample_tod</span></code></a>(dat[, fac])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.downsample_vec_r2r.html#minkasi_wrapper.extern.minkasi.minkasi.downsample_vec_r2r" title="minkasi_wrapper.extern.minkasi.minkasi.downsample_vec_r2r"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample_vec_r2r</span></code></a>(vec, fac)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.find_bad_skew_kurt.html#minkasi_wrapper.extern.minkasi.minkasi.find_bad_skew_kurt" title="minkasi_wrapper.extern.minkasi.minkasi.find_bad_skew_kurt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_bad_skew_kurt</span></code></a>(dat[, skew_thresh, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.find_good_fft_lens.html#minkasi_wrapper.extern.minkasi.minkasi.find_good_fft_lens" title="minkasi_wrapper.extern.minkasi.minkasi.find_good_fft_lens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_good_fft_lens</span></code></a>(n[, primes])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.find_jumps.html#minkasi_wrapper.extern.minkasi.minkasi.find_jumps" title="minkasi_wrapper.extern.minkasi.minkasi.find_jumps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_jumps</span></code></a>(dat[, width, pad, thresh, rat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.find_spikes.html#minkasi_wrapper.extern.minkasi.minkasi.find_spikes" title="minkasi_wrapper.extern.minkasi.minkasi.find_spikes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_spikes</span></code></a>(dat[, inner, outer, rad, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_cm_plus_poly.html#minkasi_wrapper.extern.minkasi.minkasi.fit_cm_plus_poly" title="minkasi_wrapper.extern.minkasi.minkasi.fit_cm_plus_poly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_cm_plus_poly</span></code></a>(dat[, ord, cm_ord, niter, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_jumps_from_cm.html#minkasi_wrapper.extern.minkasi.minkasi.fit_jumps_from_cm" title="minkasi_wrapper.extern.minkasi.minkasi.fit_jumps_from_cm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_jumps_from_cm</span></code></a>(dat, jumps, cm[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_linear_ps_uncorr.html#minkasi_wrapper.extern.minkasi.minkasi.fit_linear_ps_uncorr" title="minkasi_wrapper.extern.minkasi.minkasi.fit_linear_ps_uncorr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_linear_ps_uncorr</span></code></a>(dat, vecs[, tol, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_mat_vecs_poly_nonoise.html#minkasi_wrapper.extern.minkasi.minkasi.fit_mat_vecs_poly_nonoise" title="minkasi_wrapper.extern.minkasi.minkasi.fit_mat_vecs_poly_nonoise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_mat_vecs_poly_nonoise</span></code></a>(dat, mat, order[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_timestreams_with_derivs.html#minkasi_wrapper.extern.minkasi.minkasi.fit_timestreams_with_derivs" title="minkasi_wrapper.extern.minkasi.minkasi.fit_timestreams_with_derivs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_timestreams_with_derivs</span></code></a>(func, pars, tods)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_timestreams_with_derivs_manyfun.html#minkasi_wrapper.extern.minkasi.minkasi.fit_timestreams_with_derivs_manyfun" title="minkasi_wrapper.extern.minkasi.minkasi.fit_timestreams_with_derivs_manyfun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_timestreams_with_derivs_manyfun</span></code></a>(funcs, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.fit_ts_ps.html#minkasi_wrapper.extern.minkasi.minkasi.fit_ts_ps" title="minkasi_wrapper.extern.minkasi.minkasi.fit_ts_ps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_ts_ps</span></code></a>(dat[, dt, ind, nu_min, nu_max, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.gapfill_eig.html#minkasi_wrapper.extern.minkasi.minkasi.gapfill_eig" title="minkasi_wrapper.extern.minkasi.minkasi.gapfill_eig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gapfill_eig</span></code></a>(dat, cuts[, tod, thresh, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_aligned_map_subregion_car.html#minkasi_wrapper.extern.minkasi.minkasi.get_aligned_map_subregion_car" title="minkasi_wrapper.extern.minkasi.minkasi.get_aligned_map_subregion_car"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_aligned_map_subregion_car</span></code></a>(lims[, fname, ...])</p></td>
+<td><p>Get a wcs for a subregion of a map, with optionally finer pixellization.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_powspec.html#minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_powspec" title="minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_powspec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curve_deriv_powspec</span></code></a>(fitp, nu_scale, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_tod_isosrc.html#minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_tod_isosrc" title="minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_tod_isosrc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curve_deriv_tod_isosrc</span></code></a>(pars, tod[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_tod_manygauss.html#minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_tod_manygauss" title="minkasi_wrapper.extern.minkasi.minkasi.get_curve_deriv_tod_manygauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curve_deriv_tod_manygauss</span></code></a>(pars, tod[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_derivs_tod_isosrc.html#minkasi_wrapper.extern.minkasi.minkasi.get_derivs_tod_isosrc" title="minkasi_wrapper.extern.minkasi.minkasi.get_derivs_tod_isosrc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_derivs_tod_isosrc</span></code></a>(pars, tod[, niso])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_ft_vec.html#minkasi_wrapper.extern.minkasi.minkasi.get_ft_vec" title="minkasi_wrapper.extern.minkasi.minkasi.get_ft_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ft_vec</span></code></a>(n)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_grad_mask_2d.html#minkasi_wrapper.extern.minkasi.minkasi.get_grad_mask_2d" title="minkasi_wrapper.extern.minkasi.minkasi.get_grad_mask_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_grad_mask_2d</span></code></a>(map[, todvec, thresh, ...])</p></td>
+<td><p>make a mask that has an estimate of the gradient within a pixel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_nthread.html#minkasi_wrapper.extern.minkasi.minkasi.get_nthread" title="minkasi_wrapper.extern.minkasi.minkasi.get_nthread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_nthread</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_timestream_chisq_curve_deriv_from_func.html#minkasi_wrapper.extern.minkasi.minkasi.get_timestream_chisq_curve_deriv_from_func" title="minkasi_wrapper.extern.minkasi.minkasi.get_timestream_chisq_curve_deriv_from_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_timestream_chisq_curve_deriv_from_func</span></code></a>(...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_timestream_chisq_from_func.html#minkasi_wrapper.extern.minkasi.minkasi.get_timestream_chisq_from_func" title="minkasi_wrapper.extern.minkasi.minkasi.get_timestream_chisq_from_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_timestream_chisq_from_func</span></code></a>(func, pars, tods)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_ts_curve_derivs_many_funcs.html#minkasi_wrapper.extern.minkasi.minkasi.get_ts_curve_derivs_many_funcs" title="minkasi_wrapper.extern.minkasi.minkasi.get_ts_curve_derivs_many_funcs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ts_curve_derivs_many_funcs</span></code></a>(todvec, pars, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_ts_derivs_many_funcs.html#minkasi_wrapper.extern.minkasi.minkasi.get_ts_derivs_many_funcs" title="minkasi_wrapper.extern.minkasi.minkasi.get_ts_derivs_many_funcs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ts_derivs_many_funcs</span></code></a>(tod, pars, ...[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_type.html#minkasi_wrapper.extern.minkasi.minkasi.get_type" title="minkasi_wrapper.extern.minkasi.minkasi.get_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_type</span></code></a>(nbyte)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.get_wcs.html#minkasi_wrapper.extern.minkasi.minkasi.get_wcs" title="minkasi_wrapper.extern.minkasi.minkasi.get_wcs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_wcs</span></code></a>(lims, pixsize[, proj, cosdec, ref_equ])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.invsafe.html#minkasi_wrapper.extern.minkasi.minkasi.invsafe" title="minkasi_wrapper.extern.minkasi.minkasi.invsafe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invsafe</span></code></a>(mat[, thresh])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.invscale.html#minkasi_wrapper.extern.minkasi.minkasi.invscale" title="minkasi_wrapper.extern.minkasi.minkasi.invscale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invscale</span></code></a>(mat[, do_invsafe])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.isobeta_src_chisq.html#minkasi_wrapper.extern.minkasi.minkasi.isobeta_src_chisq" title="minkasi_wrapper.extern.minkasi.minkasi.isobeta_src_chisq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isobeta_src_chisq</span></code></a>(params, tods)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.make_hits.html#minkasi_wrapper.extern.minkasi.minkasi.make_hits" title="minkasi_wrapper.extern.minkasi.minkasi.make_hits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_hits</span></code></a>(todvec, map[, do_weights])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.make_rings.html#minkasi_wrapper.extern.minkasi.minkasi.make_rings" title="minkasi_wrapper.extern.minkasi.minkasi.make_rings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_rings</span></code></a>(edges, cent, map[, pixsize, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.make_rings_wSlope.html#minkasi_wrapper.extern.minkasi.minkasi.make_rings_wSlope" title="minkasi_wrapper.extern.minkasi.minkasi.make_rings_wSlope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_rings_wSlope</span></code></a>(edges, cent, vals, map[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.map2tod.html#minkasi_wrapper.extern.minkasi.minkasi.map2tod" title="minkasi_wrapper.extern.minkasi.minkasi.map2tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map2tod</span></code></a>(dat, map, ipix[, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.mask_dict.html#minkasi_wrapper.extern.minkasi.minkasi.mask_dict" title="minkasi_wrapper.extern.minkasi.minkasi.mask_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask_dict</span></code></a>(mydict, mask)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.nsphere_vol.html#minkasi_wrapper.extern.minkasi.minkasi.nsphere_vol" title="minkasi_wrapper.extern.minkasi.minkasi.nsphere_vol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsphere_vol</span></code></a>(npp)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.partition_interval.html#minkasi_wrapper.extern.minkasi.minkasi.partition_interval" title="minkasi_wrapper.extern.minkasi.minkasi.partition_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition_interval</span></code></a>(start, stop[, seg_len, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.planck_g.html#minkasi_wrapper.extern.minkasi.minkasi.planck_g" title="minkasi_wrapper.extern.minkasi.minkasi.planck_g"><code class="xref py py-obj docutils literal notranslate"><span class="pre">planck_g</span></code></a>([freq])</p></td>
+<td><p>conversion between T_CMB and T_RJ as a function of frequency.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.plot_ps.html#minkasi_wrapper.extern.minkasi.minkasi.plot_ps" title="minkasi_wrapper.extern.minkasi.minkasi.plot_ps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_ps</span></code></a>(vec[, downsamp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.polmap2tod.html#minkasi_wrapper.extern.minkasi.minkasi.polmap2tod" title="minkasi_wrapper.extern.minkasi.minkasi.polmap2tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polmap2tod</span></code></a>(dat, map, poltag, twogamma, ipix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.poltag2pols.html#minkasi_wrapper.extern.minkasi.minkasi.poltag2pols" title="minkasi_wrapper.extern.minkasi.minkasi.poltag2pols"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poltag2pols</span></code></a>(poltag)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.read_fits_map.html#minkasi_wrapper.extern.minkasi.minkasi.read_fits_map" title="minkasi_wrapper.extern.minkasi.minkasi.read_fits_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_fits_map</span></code></a>(fname[, hdu, do_trans])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.read_octave_struct.html#minkasi_wrapper.extern.minkasi.minkasi.read_octave_struct" title="minkasi_wrapper.extern.minkasi.minkasi.read_octave_struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_octave_struct</span></code></a>(fname)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits" title="minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_tod_from_fits</span></code></a>(fname[, hdu, branch])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits_cbass.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits_cbass" title="minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits_cbass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_tod_from_fits_cbass</span></code></a>(fname[, dopol, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.report_mpi.html#minkasi_wrapper.extern.minkasi.minkasi.report_mpi" title="minkasi_wrapper.extern.minkasi.minkasi.report_mpi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_mpi</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.run_pcg.html#minkasi_wrapper.extern.minkasi.minkasi.run_pcg" title="minkasi_wrapper.extern.minkasi.minkasi.run_pcg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_pcg</span></code></a>(b, x0, tods[, precon, maxiter, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior.html#minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior" title="minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_pcg_wprior</span></code></a>(b, x0, tods[, prior, precon, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior_old.html#minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior_old" title="minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior_old"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_pcg_wprior_old</span></code></a>(b, x0, tods, prior[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.scaled_airmass_from_el.html#minkasi_wrapper.extern.minkasi.minkasi.scaled_airmass_from_el" title="minkasi_wrapper.extern.minkasi.minkasi.scaled_airmass_from_el"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scaled_airmass_from_el</span></code></a>(mat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.segs_from_vec.html#minkasi_wrapper.extern.minkasi.minkasi.segs_from_vec" title="minkasi_wrapper.extern.minkasi.minkasi.segs_from_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">segs_from_vec</span></code></a>(vec[, pad])</p></td>
+<td><p>return the starting/stopping points of regions marked False in vec.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.set_nthread.html#minkasi_wrapper.extern.minkasi.minkasi.set_nthread" title="minkasi_wrapper.extern.minkasi.minkasi.set_nthread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_nthread</span></code></a>(nthread)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.slice_with_copy.html#minkasi_wrapper.extern.minkasi.minkasi.slice_with_copy" title="minkasi_wrapper.extern.minkasi.minkasi.slice_with_copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_with_copy</span></code></a>(arr, ind)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.smooth_many_vecs.html#minkasi_wrapper.extern.minkasi.minkasi.smooth_many_vecs" title="minkasi_wrapper.extern.minkasi.minkasi.smooth_many_vecs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth_many_vecs</span></code></a>(vecs[, fwhm])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.smooth_spectra.html#minkasi_wrapper.extern.minkasi.minkasi.smooth_spectra" title="minkasi_wrapper.extern.minkasi.minkasi.smooth_spectra"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth_spectra</span></code></a>(spec, fwhm)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.smooth_vec.html#minkasi_wrapper.extern.minkasi.minkasi.smooth_vec" title="minkasi_wrapper.extern.minkasi.minkasi.smooth_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smooth_vec</span></code></a>(vec[, fwhm])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.split_dict.html#minkasi_wrapper.extern.minkasi.minkasi.split_dict" title="minkasi_wrapper.extern.minkasi.minkasi.split_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_dict</span></code></a>(mydict, vec, thresh)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.split_partitioned_vec.html#minkasi_wrapper.extern.minkasi.minkasi.split_partitioned_vec" title="minkasi_wrapper.extern.minkasi.minkasi.split_partitioned_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_partitioned_vec</span></code></a>(start, stop[, breaks, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_gauss.html#minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_gauss" title="minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_gauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestreams_from_gauss</span></code></a>(ra, dec, fwhm, tod[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_isobeta.html#minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_isobeta" title="minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_isobeta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestreams_from_isobeta</span></code></a>(params, tod)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_isobeta_c.html#minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_isobeta_c" title="minkasi_wrapper.extern.minkasi.minkasi.timestreams_from_isobeta_c"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestreams_from_isobeta_c</span></code></a>(params, tod[, pred])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached" title="minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map_cached</span></code></a>(map, dat, ipix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp" title="minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map_omp</span></code></a>(map, dat, ipix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_simple.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_simple" title="minkasi_wrapper.extern.minkasi.minkasi.tod2map_simple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map_simple</span></code></a>(map, dat, ipix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2polmap.html#minkasi_wrapper.extern.minkasi.minkasi.tod2polmap" title="minkasi_wrapper.extern.minkasi.minkasi.tod2polmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2polmap</span></code></a>(map, dat, poltag, twogamma, ipix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.todvec_from_files_octave.html#minkasi_wrapper.extern.minkasi.minkasi.todvec_from_files_octave" title="minkasi_wrapper.extern.minkasi.minkasi.todvec_from_files_octave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">todvec_from_files_octave</span></code></a>(fnames)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.truncate_tod.html#minkasi_wrapper.extern.minkasi.minkasi.truncate_tod" title="minkasi_wrapper.extern.minkasi.minkasi.truncate_tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncate_tod</span></code></a>(dat[, primes])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.update_lamda.html#minkasi_wrapper.extern.minkasi.minkasi.update_lamda" title="minkasi_wrapper.extern.minkasi.minkasi.update_lamda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_lamda</span></code></a>(lamda, success)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.write_fits_map_wheader.html#minkasi_wrapper.extern.minkasi.minkasi.write_fits_map_wheader" title="minkasi_wrapper.extern.minkasi.minkasi.write_fits_map_wheader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_fits_map_wheader</span></code></a>(map, fname, header[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.y2rj.html#minkasi_wrapper.extern.minkasi.minkasi.y2rj" title="minkasi_wrapper.extern.minkasi.minkasi.y2rj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">y2rj</span></code></a>([freq])</p></td>
+<td><p>conversion to multiply a y map by to get a Rayleigh-Jeans normalized map note that it doesn't have the T_cmb at the end, so the value for low frequencies is -2.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.Cuts.html#minkasi_wrapper.extern.minkasi.minkasi.Cuts" title="minkasi_wrapper.extern.minkasi.minkasi.Cuts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cuts</span></code></a>(tod[, do_add])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.CutsCompact.html#minkasi_wrapper.extern.minkasi.minkasi.CutsCompact" title="minkasi_wrapper.extern.minkasi.minkasi.CutsCompact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CutsCompact</span></code></a>(tod)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.HealMap.html#minkasi_wrapper.extern.minkasi.minkasi.HealMap" title="minkasi_wrapper.extern.minkasi.minkasi.HealMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HealMap</span></code></a>([proj, nside, tag])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.HealPolMap.html#minkasi_wrapper.extern.minkasi.minkasi.HealPolMap" title="minkasi_wrapper.extern.minkasi.minkasi.HealPolMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HealPolMap</span></code></a>([poltag, proj, nside, tag, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.MapNoiseWhite.html#minkasi_wrapper.extern.minkasi.minkasi.MapNoiseWhite" title="minkasi_wrapper.extern.minkasi.minkasi.MapNoiseWhite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapNoiseWhite</span></code></a>(ivar_map[, isinv, nfac])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.Mapset.html#minkasi_wrapper.extern.minkasi.minkasi.Mapset" title="minkasi_wrapper.extern.minkasi.minkasi.Mapset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mapset</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedDet.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedDet" title="minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedDet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoiseBinnedDet</span></code></a>(dat, dt[, freqs, scale_facs])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedEig.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedEig" title="minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedEig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoiseBinnedEig</span></code></a>(dat, dt[, freqs, scale_facs, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.NoiseCMWhite.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseCMWhite" title="minkasi_wrapper.extern.minkasi.minkasi.NoiseCMWhite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoiseCMWhite</span></code></a>(dat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD" title="minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoiseSmoothedSVD</span></code></a>(dat_use[, fwhm, prewhiten, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.NoiseWhite.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseWhite" title="minkasi_wrapper.extern.minkasi.minkasi.NoiseWhite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoiseWhite</span></code></a>(dat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.NoiseWhiteNotch.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseWhiteNotch" title="minkasi_wrapper.extern.minkasi.minkasi.NoiseWhiteNotch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoiseWhiteNotch</span></code></a>(dat, numin, numax, tod)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.PolMap.html#minkasi_wrapper.extern.minkasi.minkasi.PolMap" title="minkasi_wrapper.extern.minkasi.minkasi.PolMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolMap</span></code></a>(lims, pixsize[, poltag, proj, pad, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyMap</span></code></a>(lims[, pixsize, proj, pad, primes, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapCar.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMapCar" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapCar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyMapCar</span></code></a>(lims[, pixsize, proj, pad, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapCarOld.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMapCarOld" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapCarOld"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyMapCarOld</span></code></a>(lims, pixsize)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyMapCoarse</span></code></a>(map)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyMapTwoRes</span></code></a>(map_lowres, lims[, osamp, ...])</p></td>
+<td><p>A pair of maps to serve as a prior for multi-experiment mapping.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.Tod.html#minkasi_wrapper.extern.minkasi.minkasi.Tod" title="minkasi_wrapper.extern.minkasi.minkasi.Tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tod</span></code></a>(info)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.TodVec.html#minkasi_wrapper.extern.minkasi.minkasi.TodVec" title="minkasi_wrapper.extern.minkasi.minkasi.TodVec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TodVec</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.detOffset.html#minkasi_wrapper.extern.minkasi.minkasi.detOffset" title="minkasi_wrapper.extern.minkasi.minkasi.detOffset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detOffset</span></code></a>([tod])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.null_precon.html#minkasi_wrapper.extern.minkasi.minkasi.null_precon" title="minkasi_wrapper.extern.minkasi.minkasi.null_precon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">null_precon</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.html#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsAirmass</span></code></a>([tod, order])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAz.html#minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAz" title="minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsBinnedAz</span></code></a>(tod[, lims, nbin])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAzShared.html#minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAzShared" title="minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAzShared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsBinnedAzShared</span></code></a>([ndet, lims, nbin])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsCalib.html#minkasi_wrapper.extern.minkasi.minkasi.tsCalib" title="minkasi_wrapper.extern.minkasi.minkasi.tsCalib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsCalib</span></code></a>([tod, model])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsCommon.html#minkasi_wrapper.extern.minkasi.minkasi.tsCommon" title="minkasi_wrapper.extern.minkasi.minkasi.tsCommon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsCommon</span></code></a>([tod])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsDetAz.html#minkasi_wrapper.extern.minkasi.minkasi.tsDetAz" title="minkasi_wrapper.extern.minkasi.minkasi.tsDetAz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsDetAz</span></code></a>(tod[, npoly])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsGeneric.html#minkasi_wrapper.extern.minkasi.minkasi.tsGeneric" title="minkasi_wrapper.extern.minkasi.minkasi.tsGeneric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsGeneric</span></code></a>([tod])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsModel.html#minkasi_wrapper.extern.minkasi.minkasi.tsModel" title="minkasi_wrapper.extern.minkasi.minkasi.tsModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsModel</span></code></a>([todvec, modelclass])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsMultiModel.html#minkasi_wrapper.extern.minkasi.minkasi.tsMultiModel" title="minkasi_wrapper.extern.minkasi.minkasi.tsMultiModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsMultiModel</span></code></a>([todvec, todtags, modelclass, tag])</p></td>
+<td><p>A class to hold timestream models that are shared between groups of TODs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsNotch.html#minkasi_wrapper.extern.minkasi.minkasi.tsNotch" title="minkasi_wrapper.extern.minkasi.minkasi.tsNotch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsNotch</span></code></a>(tod, numin, numax)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsPoly.html#minkasi_wrapper.extern.minkasi.minkasi.tsPoly" title="minkasi_wrapper.extern.minkasi.minkasi.tsPoly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsPoly</span></code></a>(tod[, order])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsStripes.html#minkasi_wrapper.extern.minkasi.minkasi.tsStripes" title="minkasi_wrapper.extern.minkasi.minkasi.tsStripes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsStripes</span></code></a>(tod[, seg_len, do_slope, tthresh])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsStripes_old.html#minkasi_wrapper.extern.minkasi.minkasi.tsStripes_old" title="minkasi_wrapper.extern.minkasi.minkasi.tsStripes_old"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsStripes_old</span></code></a>(tod[, seg_len, do_slope])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/minkasi_wrapper.extern.minkasi.minkasi.tsVecs.html#minkasi_wrapper.extern.minkasi.minkasi.tsVecs" title="minkasi_wrapper.extern.minkasi.minkasi.tsVecs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsVecs</span></code></a>(tod, vecs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<div class="graphviz"><object data="_images/inheritance-52253927d48eb4673062eb44dc5b61829c56d19a.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of minkasi_wrapper.extern.minkasi.minkasi.Cuts, minkasi_wrapper.extern.minkasi.minkasi.CutsCompact, minkasi_wrapper.extern.minkasi.minkasi.HealMap, minkasi_wrapper.extern.minkasi.minkasi.HealPolMap, minkasi_wrapper.extern.minkasi.minkasi.MapNoiseWhite, minkasi_wrapper.extern.minkasi.minkasi.Mapset, minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedDet, minkasi_wrapper.extern.minkasi.minkasi.NoiseBinnedEig, minkasi_wrapper.extern.minkasi.minkasi.NoiseCMWhite, minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD, minkasi_wrapper.extern.minkasi.minkasi.NoiseWhite, minkasi_wrapper.extern.minkasi.minkasi.NoiseWhiteNotch, minkasi_wrapper.extern.minkasi.minkasi.PolMap, minkasi_wrapper.extern.minkasi.minkasi.SkyMap, minkasi_wrapper.extern.minkasi.minkasi.SkyMapCar, minkasi_wrapper.extern.minkasi.minkasi.SkyMapCarOld, minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse, minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes, minkasi_wrapper.extern.minkasi.minkasi.Tod, minkasi_wrapper.extern.minkasi.minkasi.TodVec, minkasi_wrapper.extern.minkasi.minkasi.detOffset, minkasi_wrapper.extern.minkasi.minkasi.null_precon, minkasi_wrapper.extern.minkasi.minkasi.tsAirmass, minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAz, minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAzShared, minkasi_wrapper.extern.minkasi.minkasi.tsCalib, minkasi_wrapper.extern.minkasi.minkasi.tsCommon, minkasi_wrapper.extern.minkasi.minkasi.tsDetAz, minkasi_wrapper.extern.minkasi.minkasi.tsGeneric, minkasi_wrapper.extern.minkasi.minkasi.tsModel, minkasi_wrapper.extern.minkasi.minkasi.tsMultiModel, minkasi_wrapper.extern.minkasi.minkasi.tsNotch, minkasi_wrapper.extern.minkasi.minkasi.tsPoly, minkasi_wrapper.extern.minkasi.minkasi.tsStripes, minkasi_wrapper.extern.minkasi.minkasi.tsStripes_old, minkasi_wrapper.extern.minkasi.minkasi.tsVecs</p></object></div>
+</section>
+</section>
+<section id="index">
+<h1>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">MinkasiWrapper</a><ul>
+<li><a class="reference internal" href="#a-wrapper-for-the-minkasi-map-maker">A Wrapper for the Minkasi Map Maker</a></li>
+<li><a class="reference internal" href="#minkasi-map-maker">Minkasi Map Maker</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#high-level-api">High-level API</a></li>
+<li><a class="reference internal" href="#low-level-api">Low-level API</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-minkasi_wrapper">minkasi_wrapper Package</a></li>
+<li><a class="reference internal" href="#module-minkasi_wrapper.extern.minkasi.minkasi">minkasi_wrapper.extern.minkasi.minkasi Module</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#index">Index</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="_sources/index.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2022, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
+    Last built 12 Apr 2022. <br/>
+  </p>
+</footer>
+  </body>
+</html>

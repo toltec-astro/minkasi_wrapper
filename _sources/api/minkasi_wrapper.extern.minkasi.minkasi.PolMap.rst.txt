@@ -1,0 +1,47 @@
+PolMap
+======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: PolMap
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~PolMap.assign
+      ~PolMap.axpy
+      ~PolMap.clear
+      ~PolMap.clear_caches
+      ~PolMap.copy
+      ~PolMap.dot
+      ~PolMap.get_caches
+      ~PolMap.get_pix
+      ~PolMap.invert
+      ~PolMap.map2tod
+      ~PolMap.mpi_reduce
+      ~PolMap.pix_from_radec
+      ~PolMap.r_th_maps
+      ~PolMap.set_polstate
+      ~PolMap.tod2map
+      ~PolMap.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: assign
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: clear_caches
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: get_caches
+   .. automethod:: get_pix
+   .. automethod:: invert
+   .. automethod:: map2tod
+   .. automethod:: mpi_reduce
+   .. automethod:: pix_from_radec
+   .. automethod:: r_th_maps
+   .. automethod:: set_polstate
+   .. automethod:: tod2map
+   .. automethod:: write

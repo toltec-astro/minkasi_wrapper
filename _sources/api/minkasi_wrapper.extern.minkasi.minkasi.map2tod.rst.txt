@@ -1,0 +1,6 @@
+map2tod
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: map2tod

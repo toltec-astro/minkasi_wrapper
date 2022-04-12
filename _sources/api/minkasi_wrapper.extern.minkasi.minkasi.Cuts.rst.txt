@@ -1,0 +1,27 @@
+Cuts
+====
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: Cuts
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Cuts.axpy
+      ~Cuts.clear
+      ~Cuts.copy
+      ~Cuts.dot
+      ~Cuts.map2tod
+      ~Cuts.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: map2tod
+   .. automethod:: tod2map

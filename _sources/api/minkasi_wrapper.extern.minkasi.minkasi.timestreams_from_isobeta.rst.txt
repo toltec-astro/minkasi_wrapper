@@ -1,0 +1,6 @@
+timestreams_from_isobeta
+========================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: timestreams_from_isobeta

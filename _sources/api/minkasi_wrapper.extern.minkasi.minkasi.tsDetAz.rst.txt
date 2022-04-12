@@ -1,0 +1,19 @@
+tsDetAz
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsDetAz
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsDetAz.map2tod
+      ~tsDetAz.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: map2tod
+   .. automethod:: tod2map

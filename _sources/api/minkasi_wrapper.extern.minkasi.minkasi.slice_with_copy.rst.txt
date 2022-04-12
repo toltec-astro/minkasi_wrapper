@@ -1,0 +1,6 @@
+slice_with_copy
+===============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: slice_with_copy

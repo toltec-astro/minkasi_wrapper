@@ -1,0 +1,17 @@
+NoiseBinnedEig
+==============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: NoiseBinnedEig
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NoiseBinnedEig.apply_noise
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise

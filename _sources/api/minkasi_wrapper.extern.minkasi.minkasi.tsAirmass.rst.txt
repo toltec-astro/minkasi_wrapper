@@ -1,0 +1,29 @@
+tsAirmass
+=========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsAirmass
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsAirmass.axpy
+      ~tsAirmass.clear
+      ~tsAirmass.copy
+      ~tsAirmass.dot
+      ~tsAirmass.map2tod
+      ~tsAirmass.tod2map
+      ~tsAirmass.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: map2tod
+   .. automethod:: tod2map
+   .. automethod:: write

@@ -1,0 +1,6 @@
+find_good_fft_lens
+==================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: find_good_fft_lens

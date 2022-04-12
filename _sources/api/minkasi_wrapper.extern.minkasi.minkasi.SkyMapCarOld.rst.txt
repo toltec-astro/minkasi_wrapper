@@ -1,0 +1,33 @@
+SkyMapCarOld
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: SkyMapCarOld
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~SkyMapCarOld.assign
+      ~SkyMapCarOld.axpy
+      ~SkyMapCarOld.clear
+      ~SkyMapCarOld.copy
+      ~SkyMapCarOld.dot
+      ~SkyMapCarOld.get_pix
+      ~SkyMapCarOld.map2tod
+      ~SkyMapCarOld.r_th_maps
+      ~SkyMapCarOld.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: assign
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: get_pix
+   .. automethod:: map2tod
+   .. automethod:: r_th_maps
+   .. automethod:: tod2map

@@ -1,0 +1,6 @@
+set_nthread
+===========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: set_nthread

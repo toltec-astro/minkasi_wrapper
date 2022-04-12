@@ -1,0 +1,6 @@
+todvec_from_files_octave
+========================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: todvec_from_files_octave

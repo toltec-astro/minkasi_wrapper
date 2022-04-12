@@ -1,0 +1,6 @@
+read_tod_from_fits
+==================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: read_tod_from_fits

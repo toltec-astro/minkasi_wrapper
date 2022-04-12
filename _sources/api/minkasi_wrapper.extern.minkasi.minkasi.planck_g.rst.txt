@@ -1,0 +1,6 @@
+planck_g
+========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: planck_g

@@ -1,0 +1,6 @@
+read_octave_struct
+==================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: read_octave_struct

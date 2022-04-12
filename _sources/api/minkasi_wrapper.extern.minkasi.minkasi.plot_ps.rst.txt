@@ -1,0 +1,6 @@
+plot_ps
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: plot_ps

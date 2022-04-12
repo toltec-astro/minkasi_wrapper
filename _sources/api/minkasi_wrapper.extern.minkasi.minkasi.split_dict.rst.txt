@@ -1,0 +1,6 @@
+split_dict
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: split_dict

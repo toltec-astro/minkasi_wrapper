@@ -1,0 +1,6 @@
+fit_linear_ps_uncorr
+====================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: fit_linear_ps_uncorr

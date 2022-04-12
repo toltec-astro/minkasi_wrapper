@@ -1,0 +1,19 @@
+NoiseCMWhite
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: NoiseCMWhite
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NoiseCMWhite.apply_noise
+      ~NoiseCMWhite.get_det_weights
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise
+   .. automethod:: get_det_weights

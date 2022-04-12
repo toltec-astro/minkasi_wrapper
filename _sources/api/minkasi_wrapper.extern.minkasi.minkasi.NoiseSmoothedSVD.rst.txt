@@ -1,0 +1,21 @@
+NoiseSmoothedSVD
+================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: NoiseSmoothedSVD
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NoiseSmoothedSVD.apply_noise
+      ~NoiseSmoothedSVD.apply_noise_wscratch
+      ~NoiseSmoothedSVD.get_det_weights
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise
+   .. automethod:: apply_noise_wscratch
+   .. automethod:: get_det_weights

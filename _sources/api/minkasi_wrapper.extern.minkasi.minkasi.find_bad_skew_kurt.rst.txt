@@ -1,0 +1,6 @@
+find_bad_skew_kurt
+==================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: find_bad_skew_kurt

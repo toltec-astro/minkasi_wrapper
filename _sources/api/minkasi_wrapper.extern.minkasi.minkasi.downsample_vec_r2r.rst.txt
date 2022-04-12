@@ -1,0 +1,6 @@
+downsample_vec_r2r
+==================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: downsample_vec_r2r

@@ -1,0 +1,6 @@
+gapfill_eig
+===========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: gapfill_eig

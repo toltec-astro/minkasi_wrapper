@@ -1,0 +1,6 @@
+fit_cm_plus_poly
+================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: fit_cm_plus_poly

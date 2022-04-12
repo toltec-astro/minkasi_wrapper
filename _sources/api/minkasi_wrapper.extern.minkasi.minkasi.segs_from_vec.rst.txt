@@ -1,0 +1,6 @@
+segs_from_vec
+=============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: segs_from_vec

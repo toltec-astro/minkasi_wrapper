@@ -1,0 +1,79 @@
+Tod
+===
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: Tod
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Tod.apply_noise
+      ~Tod.apply_noise_cm_white
+      ~Tod.apply_noise_white_masked
+      ~Tod.clear_saved_pix
+      ~Tod.copy
+      ~Tod.cut_detectors
+      ~Tod.dot
+      ~Tod.get_data
+      ~Tod.get_data_dims
+      ~Tod.get_det_weights
+      ~Tod.get_empty
+      ~Tod.get_ndata
+      ~Tod.get_ndet
+      ~Tod.get_nsamp
+      ~Tod.get_radec
+      ~Tod.get_saved_pix
+      ~Tod.get_tvec
+      ~Tod.lims
+      ~Tod.mapset2tod
+      ~Tod.prior_from_skymap
+      ~Tod.save_pixellization
+      ~Tod.set_apix
+      ~Tod.set_jumps
+      ~Tod.set_noise
+      ~Tod.set_noise_binned_eig
+      ~Tod.set_noise_cm_white
+      ~Tod.set_noise_smoothed_svd
+      ~Tod.set_noise_white_masked
+      ~Tod.set_pix
+      ~Tod.set_tag
+      ~Tod.timestream_chisq
+      ~Tod.tod2mapset
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise
+   .. automethod:: apply_noise_cm_white
+   .. automethod:: apply_noise_white_masked
+   .. automethod:: clear_saved_pix
+   .. automethod:: copy
+   .. automethod:: cut_detectors
+   .. automethod:: dot
+   .. automethod:: get_data
+   .. automethod:: get_data_dims
+   .. automethod:: get_det_weights
+   .. automethod:: get_empty
+   .. automethod:: get_ndata
+   .. automethod:: get_ndet
+   .. automethod:: get_nsamp
+   .. automethod:: get_radec
+   .. automethod:: get_saved_pix
+   .. automethod:: get_tvec
+   .. automethod:: lims
+   .. automethod:: mapset2tod
+   .. automethod:: prior_from_skymap
+   .. automethod:: save_pixellization
+   .. automethod:: set_apix
+   .. automethod:: set_jumps
+   .. automethod:: set_noise
+   .. automethod:: set_noise_binned_eig
+   .. automethod:: set_noise_cm_white
+   .. automethod:: set_noise_smoothed_svd
+   .. automethod:: set_noise_white_masked
+   .. automethod:: set_pix
+   .. automethod:: set_tag
+   .. automethod:: timestream_chisq
+   .. automethod:: tod2mapset

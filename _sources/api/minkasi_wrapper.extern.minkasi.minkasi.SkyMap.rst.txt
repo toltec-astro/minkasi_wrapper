@@ -1,0 +1,45 @@
+SkyMap
+======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: SkyMap
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~SkyMap.assign
+      ~SkyMap.axpy
+      ~SkyMap.clear
+      ~SkyMap.clear_caches
+      ~SkyMap.copy
+      ~SkyMap.dot
+      ~SkyMap.get_caches
+      ~SkyMap.get_pix
+      ~SkyMap.invert
+      ~SkyMap.map2tod
+      ~SkyMap.mpi_reduce
+      ~SkyMap.pix_from_radec
+      ~SkyMap.r_th_maps
+      ~SkyMap.tod2map
+      ~SkyMap.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: assign
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: clear_caches
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: get_caches
+   .. automethod:: get_pix
+   .. automethod:: invert
+   .. automethod:: map2tod
+   .. automethod:: mpi_reduce
+   .. automethod:: pix_from_radec
+   .. automethod:: r_th_maps
+   .. automethod:: tod2map
+   .. automethod:: write

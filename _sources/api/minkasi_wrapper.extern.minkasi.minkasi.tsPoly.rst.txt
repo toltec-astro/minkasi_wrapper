@@ -1,0 +1,7 @@
+tsPoly
+======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsPoly
+   :show-inheritance:

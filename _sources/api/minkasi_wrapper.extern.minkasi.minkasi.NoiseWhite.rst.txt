@@ -1,0 +1,17 @@
+NoiseWhite
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: NoiseWhite
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NoiseWhite.apply_noise
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise

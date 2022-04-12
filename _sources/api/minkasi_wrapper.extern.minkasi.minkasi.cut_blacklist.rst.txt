@@ -1,0 +1,6 @@
+cut_blacklist
+=============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: cut_blacklist

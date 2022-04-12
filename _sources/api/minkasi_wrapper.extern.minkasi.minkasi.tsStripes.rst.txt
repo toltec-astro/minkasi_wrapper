@@ -1,0 +1,25 @@
+tsStripes
+=========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsStripes
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsStripes.apply_prior
+      ~tsStripes.copy
+      ~tsStripes.map2tod
+      ~tsStripes.set_prior_from_corr
+      ~tsStripes.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_prior
+   .. automethod:: copy
+   .. automethod:: map2tod
+   .. automethod:: set_prior_from_corr
+   .. automethod:: tod2map

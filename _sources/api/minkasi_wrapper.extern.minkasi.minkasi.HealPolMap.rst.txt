@@ -1,0 +1,21 @@
+HealPolMap
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: HealPolMap
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~HealPolMap.copy
+      ~HealPolMap.pix_from_radec
+      ~HealPolMap.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: pix_from_radec
+   .. automethod:: write

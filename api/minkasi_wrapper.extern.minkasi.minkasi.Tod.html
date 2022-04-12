@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tod &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TodVec" href="minkasi_wrapper.extern.minkasi.minkasi.TodVec.html" />
+    <link rel="prev" title="SkyMapTwoRes" href="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">MinkasiWrapper</span><span id="logotext2"></span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.TodVec.html" title="TodVec">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.html" title="SkyMapTwoRes">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	 &#187;
+      </li>
+      
+      <li>Tod</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="tod">
+<h1>Tod<a class="headerlink" href="#tod" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minkasi_wrapper.extern.minkasi.minkasi.</span></span><span class="sig-name descname"><span class="pre">Tod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_noise</span></code></a>([dat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_cm_white" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_cm_white"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_noise_cm_white</span></code></a>([dat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_white_masked" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_white_masked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_noise_white_masked</span></code></a>([dat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.clear_saved_pix" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.clear_saved_pix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_saved_pix</span></code></a>([tag])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.copy" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>([copy_info])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.cut_detectors" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.cut_detectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cut_detectors</span></code></a>(isgood)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.dot" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>(mapset, mapset_out[, times])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data_dims" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_dims</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_det_weights" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_det_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_det_weights</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_empty" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_empty</span></code></a>([clear])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndata" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ndata</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndet" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ndet</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_nsamp" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_nsamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_nsamp</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_radec" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_radec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_radec</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_saved_pix" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_saved_pix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_saved_pix</span></code></a>([tag])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_tvec" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_tvec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tvec</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.lims" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.lims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lims</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.mapset2tod" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.mapset2tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapset2tod</span></code></a>(mapset[, dat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.prior_from_skymap" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.prior_from_skymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prior_from_skymap</span></code></a>(skymap)</p></td>
+<td><p>stuff.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.save_pixellization" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.save_pixellization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_pixellization</span></code></a>(tag, ipix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_apix" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_apix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_apix</span></code></a>()</p></td>
+<td><p>calculates dxel normalized to +-1 from elevation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_jumps" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_jumps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_jumps</span></code></a>(jumps)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_noise</span></code></a>([modelclass, dat, delayed])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_binned_eig" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_binned_eig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_noise_binned_eig</span></code></a>([dat, freqs, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_cm_white" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_cm_white"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_noise_cm_white</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_smoothed_svd" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_smoothed_svd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_noise_smoothed_svd</span></code></a>([fwhm, func, pars, ...])</p></td>
+<td><p>If func comes in as not empty, assume we can call func(pars,tod) to get a predicted model for the tod that we subtract off before estimating the noise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_white_masked" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_white_masked"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_noise_white_masked</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_pix" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_pix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pix</span></code></a>(map)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_tag" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_tag</span></code></a>(tag)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.timestream_chisq" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.timestream_chisq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestream_chisq</span></code></a>([dat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.tod2mapset" title="minkasi_wrapper.extern.minkasi.minkasi.Tod.tod2mapset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2mapset</span></code></a>(mapset[, dat])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise">
+<span class="sig-name descname"><span class="pre">apply_noise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.apply_noise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_cm_white">
+<span class="sig-name descname"><span class="pre">apply_noise_cm_white</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.apply_noise_cm_white"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_cm_white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_white_masked">
+<span class="sig-name descname"><span class="pre">apply_noise_white_masked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.apply_noise_white_masked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.apply_noise_white_masked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.clear_saved_pix">
+<span class="sig-name descname"><span class="pre">clear_saved_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.clear_saved_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.clear_saved_pix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.cut_detectors">
+<span class="sig-name descname"><span class="pre">cut_detectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isgood</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.cut_detectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.cut_detectors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.dot">
+<span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapset_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data_dims">
+<span class="sig-name descname"><span class="pre">get_data_dims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_data_dims"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_data_dims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_det_weights">
+<span class="sig-name descname"><span class="pre">get_det_weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_det_weights"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_det_weights" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_empty">
+<span class="sig-name descname"><span class="pre">get_empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndata">
+<span class="sig-name descname"><span class="pre">get_ndata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_ndata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndet">
+<span class="sig-name descname"><span class="pre">get_ndet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_ndet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_ndet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_nsamp">
+<span class="sig-name descname"><span class="pre">get_nsamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_nsamp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_nsamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_radec">
+<span class="sig-name descname"><span class="pre">get_radec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_radec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_radec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_saved_pix">
+<span class="sig-name descname"><span class="pre">get_saved_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_saved_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_saved_pix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.get_tvec">
+<span class="sig-name descname"><span class="pre">get_tvec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.get_tvec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.get_tvec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.lims">
+<span class="sig-name descname"><span class="pre">lims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.lims"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.lims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.mapset2tod">
+<span class="sig-name descname"><span class="pre">mapset2tod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.mapset2tod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.mapset2tod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.prior_from_skymap">
+<span class="sig-name descname"><span class="pre">prior_from_skymap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skymap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.prior_from_skymap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.prior_from_skymap" title="Permalink to this definition">¶</a></dt>
+<dd><p>stuff.
+prior_from_skymap(self,skymap):
+Given e.g. the gradient of a map that has been zeroed under some threshold,
+return a CutsCompact object that can be used as a prior for solving for per-sample deviations
+due to strong map gradients.  This is to reduce X’s around bright sources.  The input map
+should be a SkyMap that is non-zero where one wishes to solve for the per-sample deviations, and 
+the non-zero values should be the standard deviations expected in those pixel.  The returned CutsCompact 
+object will have the weight (i.e. 1/input squared) in its map.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.save_pixellization">
+<span class="sig-name descname"><span class="pre">save_pixellization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.save_pixellization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.save_pixellization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_apix">
+<span class="sig-name descname"><span class="pre">set_apix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_apix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_apix" title="Permalink to this definition">¶</a></dt>
+<dd><p>calculates dxel normalized to +-1 from elevation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_jumps">
+<span class="sig-name descname"><span class="pre">set_jumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jumps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_jumps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_jumps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise">
+<span class="sig-name descname"><span class="pre">set_noise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modelclass=&lt;class</span> <span class="pre">'minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delayed=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_noise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_binned_eig">
+<span class="sig-name descname"><span class="pre">set_noise_binned_eig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freqs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_facs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_noise_binned_eig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_binned_eig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_cm_white">
+<span class="sig-name descname"><span class="pre">set_noise_cm_white</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_noise_cm_white"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_cm_white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_smoothed_svd">
+<span class="sig-name descname"><span class="pre">set_noise_smoothed_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fwhm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prewhiten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_powlaw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_noise_smoothed_svd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_smoothed_svd" title="Permalink to this definition">¶</a></dt>
+<dd><p>If func comes in as not empty, assume we can call func(pars,tod) to get a predicted model for the tod that
+we subtract off before estimating the noise.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_white_masked">
+<span class="sig-name descname"><span class="pre">set_noise_white_masked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_noise_white_masked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_white_masked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_pix">
+<span class="sig-name descname"><span class="pre">set_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_pix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.set_tag">
+<span class="sig-name descname"><span class="pre">set_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.set_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.timestream_chisq">
+<span class="sig-name descname"><span class="pre">timestream_chisq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.timestream_chisq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.timestream_chisq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.Tod.tod2mapset">
+<span class="sig-name descname"><span class="pre">tod2mapset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#Tod.tod2mapset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.Tod.tod2mapset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">Tod</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/minkasi_wrapper.extern.minkasi.minkasi.Tod.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2022, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
+    Last built 12 Apr 2022. <br/>
+  </p>
+</footer>
+  </body>
+</html>

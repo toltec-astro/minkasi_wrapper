@@ -1,0 +1,21 @@
+tsNotch
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsNotch
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsNotch.get_vecs
+      ~tsNotch.map2tod
+      ~tsNotch.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: get_vecs
+   .. automethod:: map2tod
+   .. automethod:: tod2map

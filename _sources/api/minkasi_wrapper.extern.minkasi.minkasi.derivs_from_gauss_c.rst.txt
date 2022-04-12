@@ -1,0 +1,6 @@
+derivs_from_gauss_c
+===================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: derivs_from_gauss_c

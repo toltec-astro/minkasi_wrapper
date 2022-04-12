@@ -1,0 +1,6 @@
+y2rj
+====
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: y2rj

@@ -1,0 +1,6 @@
+find_jumps
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: find_jumps

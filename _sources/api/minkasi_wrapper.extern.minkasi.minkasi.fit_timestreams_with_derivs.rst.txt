@@ -1,0 +1,6 @@
+fit_timestreams_with_derivs
+===========================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: fit_timestreams_with_derivs

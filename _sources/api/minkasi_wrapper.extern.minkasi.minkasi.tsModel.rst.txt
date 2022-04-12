@@ -1,0 +1,35 @@
+tsModel
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsModel
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsModel.apply_prior
+      ~tsModel.axpy
+      ~tsModel.clear
+      ~tsModel.clear_caches
+      ~tsModel.copy
+      ~tsModel.dot
+      ~tsModel.get_caches
+      ~tsModel.map2tod
+      ~tsModel.mpi_reduce
+      ~tsModel.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_prior
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: clear_caches
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: get_caches
+   .. automethod:: map2tod
+   .. automethod:: mpi_reduce
+   .. automethod:: tod2map

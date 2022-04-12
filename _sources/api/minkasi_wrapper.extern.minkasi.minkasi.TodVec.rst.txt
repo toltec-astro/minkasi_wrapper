@@ -1,0 +1,31 @@
+TodVec
+======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: TodVec
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TodVec.add_tod
+      ~TodVec.dot
+      ~TodVec.dot_cached
+      ~TodVec.get_nsamp
+      ~TodVec.lims
+      ~TodVec.make_rhs
+      ~TodVec.set_apix
+      ~TodVec.set_pix
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_tod
+   .. automethod:: dot
+   .. automethod:: dot_cached
+   .. automethod:: get_nsamp
+   .. automethod:: lims
+   .. automethod:: make_rhs
+   .. automethod:: set_apix
+   .. automethod:: set_pix

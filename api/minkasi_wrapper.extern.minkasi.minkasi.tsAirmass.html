@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>tsAirmass &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tsBinnedAz" href="minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAz.html" />
+    <link rel="prev" title="null_precon" href="minkasi_wrapper.extern.minkasi.minkasi.null_precon.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">MinkasiWrapper</span><span id="logotext2"></span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.tsBinnedAz.html" title="tsBinnedAz">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.null_precon.html" title="null_precon">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	 &#187;
+      </li>
+      
+      <li>tsAirmass</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="tsairmass">
+<h1>tsAirmass<a class="headerlink" href="#tsairmass" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minkasi_wrapper.extern.minkasi.minkasi.</span></span><span class="sig-name descname"><span class="pre">tsAirmass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.axpy" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.axpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">axpy</span></code></a>(ts, a)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.clear" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.copy" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>([copyMat])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.dot" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>(ts)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.map2tod" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.map2tod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map2tod</span></code></a>(tod, dat[, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.tod2map" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.tod2map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map</span></code></a>(tod, dat[, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.write" title="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>([fname])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.axpy">
+<span class="sig-name descname"><span class="pre">axpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.axpy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.axpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copyMat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.dot">
+<span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.map2tod">
+<span class="sig-name descname"><span class="pre">map2tod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_omp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.map2tod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.map2tod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.tod2map">
+<span class="sig-name descname"><span class="pre">tod2map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_omp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.tod2map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.tod2map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#tsAirmass.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">tsAirmass</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/minkasi_wrapper.extern.minkasi.minkasi.tsAirmass.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2022, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
+    Last built 12 Apr 2022. <br/>
+  </p>
+</footer>
+  </body>
+</html>

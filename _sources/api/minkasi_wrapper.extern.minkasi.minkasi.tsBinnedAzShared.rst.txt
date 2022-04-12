@@ -1,0 +1,19 @@
+tsBinnedAzShared
+================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsBinnedAzShared
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsBinnedAzShared.map2tod
+      ~tsBinnedAzShared.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: map2tod
+   .. automethod:: tod2map

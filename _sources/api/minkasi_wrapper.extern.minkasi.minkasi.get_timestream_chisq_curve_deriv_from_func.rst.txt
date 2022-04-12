@@ -1,0 +1,6 @@
+get_timestream_chisq_curve_deriv_from_func
+==========================================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: get_timestream_chisq_curve_deriv_from_func

@@ -1,0 +1,6 @@
+scaled_airmass_from_el
+======================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: scaled_airmass_from_el

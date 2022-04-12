@@ -1,0 +1,6 @@
+decimate
+========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: decimate

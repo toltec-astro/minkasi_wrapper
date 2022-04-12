@@ -1,0 +1,21 @@
+HealMap
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: HealMap
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~HealMap.copy
+      ~HealMap.pix_from_radec
+      ~HealMap.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: pix_from_radec
+   .. automethod:: write

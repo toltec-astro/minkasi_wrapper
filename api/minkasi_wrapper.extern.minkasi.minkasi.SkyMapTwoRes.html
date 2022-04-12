@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SkyMapTwoRes &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tod" href="minkasi_wrapper.extern.minkasi.minkasi.Tod.html" />
+    <link rel="prev" title="SkyMapCoarse" href="minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">MinkasiWrapper</span><span id="logotext2"></span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.Tod.html" title="Tod">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse.html" title="SkyMapCoarse">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	 &#187;
+      </li>
+      
+      <li>SkyMapTwoRes</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="skymaptwores">
+<h1>SkyMapTwoRes<a class="headerlink" href="#skymaptwores" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minkasi_wrapper.extern.minkasi.minkasi.</span></span><span class="sig-name descname"><span class="pre">SkyMapTwoRes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_lowres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">osamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_fac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A pair of maps to serve as a prior for multi-experiment mapping.  This would e.g. be the ACT map that e.g. Mustang should agree
+with on large scales.</p>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_H" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_H"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_H</span></code></a>(coarse, fine)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_HT" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_HT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_HT</span></code></a>(mm)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_Qinv" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_Qinv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_Qinv</span></code></a>(map)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_prior" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_prior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_prior</span></code></a>(mapset, outmapset)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.beam_convolve" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.beam_convolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beam_convolve</span></code></a>(map)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.coarse2maps" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.coarse2maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coarse2maps</span></code></a>(inmap)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.copy" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_map_deconvolved" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_map_deconvolved"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_map_deconvolved</span></code></a>(map_deconvolved)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_rhs" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_rhs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rhs</span></code></a>(mapset)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2coarse" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2coarse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maps2coarse</span></code></a>(fine, coarse)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2fine" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2fine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maps2fine</span></code></a>(fine, coarse)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_1d" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_beam_1d</span></code></a>(prof, pixsize)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_gauss" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_gauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_beam_gauss</span></code></a>(fwhm_pix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_mask" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mask</span></code></a>(hits[, thresh])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_noise_white" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_noise_white"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_noise_white</span></code></a>(ivar_map[, isinv, nfac])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_H">
+<span class="sig-name descname"><span class="pre">apply_H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coarse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.apply_H"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_H" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_HT">
+<span class="sig-name descname"><span class="pre">apply_HT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.apply_HT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_HT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_Qinv">
+<span class="sig-name descname"><span class="pre">apply_Qinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.apply_Qinv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_Qinv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_prior">
+<span class="sig-name descname"><span class="pre">apply_prior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outmapset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.apply_prior"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.apply_prior" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.beam_convolve">
+<span class="sig-name descname"><span class="pre">beam_convolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.beam_convolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.beam_convolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.coarse2maps">
+<span class="sig-name descname"><span class="pre">coarse2maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inmap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.coarse2maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.coarse2maps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_map_deconvolved">
+<span class="sig-name descname"><span class="pre">get_map_deconvolved</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_deconvolved</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.get_map_deconvolved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_map_deconvolved" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_rhs">
+<span class="sig-name descname"><span class="pre">get_rhs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.get_rhs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.get_rhs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2coarse">
+<span class="sig-name descname"><span class="pre">maps2coarse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coarse</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.maps2coarse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2coarse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2fine">
+<span class="sig-name descname"><span class="pre">maps2fine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coarse</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.maps2fine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.maps2fine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_1d">
+<span class="sig-name descname"><span class="pre">set_beam_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixsize</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.set_beam_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_1d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_gauss">
+<span class="sig-name descname"><span class="pre">set_beam_gauss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fwhm_pix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.set_beam_gauss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_beam_gauss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_mask">
+<span class="sig-name descname"><span class="pre">set_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.set_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_noise_white">
+<span class="sig-name descname"><span class="pre">set_noise_white</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ivar_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isinv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMapTwoRes.set_noise_white"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.set_noise_white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">SkyMapTwoRes</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2022, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
+    Last built 12 Apr 2022. <br/>
+  </p>
+</footer>
+  </body>
+</html>

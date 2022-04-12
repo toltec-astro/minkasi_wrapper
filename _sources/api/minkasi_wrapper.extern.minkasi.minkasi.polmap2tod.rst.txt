@@ -1,0 +1,6 @@
+polmap2tod
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: polmap2tod

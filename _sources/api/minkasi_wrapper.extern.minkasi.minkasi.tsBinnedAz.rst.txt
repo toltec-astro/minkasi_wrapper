@@ -1,0 +1,19 @@
+tsBinnedAz
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsBinnedAz
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsBinnedAz.map2tod
+      ~tsBinnedAz.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: map2tod
+   .. automethod:: tod2map

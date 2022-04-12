@@ -1,0 +1,6 @@
+report_mpi
+==========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: report_mpi

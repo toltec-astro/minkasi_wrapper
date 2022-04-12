@@ -1,0 +1,45 @@
+SkyMapTwoRes
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: SkyMapTwoRes
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~SkyMapTwoRes.apply_H
+      ~SkyMapTwoRes.apply_HT
+      ~SkyMapTwoRes.apply_Qinv
+      ~SkyMapTwoRes.apply_prior
+      ~SkyMapTwoRes.beam_convolve
+      ~SkyMapTwoRes.coarse2maps
+      ~SkyMapTwoRes.copy
+      ~SkyMapTwoRes.get_map_deconvolved
+      ~SkyMapTwoRes.get_rhs
+      ~SkyMapTwoRes.maps2coarse
+      ~SkyMapTwoRes.maps2fine
+      ~SkyMapTwoRes.set_beam_1d
+      ~SkyMapTwoRes.set_beam_gauss
+      ~SkyMapTwoRes.set_mask
+      ~SkyMapTwoRes.set_noise_white
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_H
+   .. automethod:: apply_HT
+   .. automethod:: apply_Qinv
+   .. automethod:: apply_prior
+   .. automethod:: beam_convolve
+   .. automethod:: coarse2maps
+   .. automethod:: copy
+   .. automethod:: get_map_deconvolved
+   .. automethod:: get_rhs
+   .. automethod:: maps2coarse
+   .. automethod:: maps2fine
+   .. automethod:: set_beam_1d
+   .. automethod:: set_beam_gauss
+   .. automethod:: set_mask
+   .. automethod:: set_noise_white

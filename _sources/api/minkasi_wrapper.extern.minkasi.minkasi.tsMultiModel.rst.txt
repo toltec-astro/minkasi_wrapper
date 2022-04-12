@@ -1,0 +1,23 @@
+tsMultiModel
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsMultiModel
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsMultiModel.copy
+      ~tsMultiModel.dot
+      ~tsMultiModel.map2tod
+      ~tsMultiModel.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: map2tod
+   .. automethod:: tod2map

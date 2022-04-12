@@ -1,0 +1,6 @@
+poltag2pols
+===========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: poltag2pols

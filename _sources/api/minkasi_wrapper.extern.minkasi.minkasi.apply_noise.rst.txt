@@ -1,0 +1,6 @@
+apply_noise
+===========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: apply_noise

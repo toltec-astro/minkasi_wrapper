@@ -1,0 +1,6 @@
+downsample_tod
+==============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: downsample_tod

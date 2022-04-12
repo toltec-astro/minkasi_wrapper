@@ -1,0 +1,6 @@
+get_wcs
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: get_wcs

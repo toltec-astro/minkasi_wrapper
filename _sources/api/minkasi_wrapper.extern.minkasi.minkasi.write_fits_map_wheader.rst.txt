@@ -1,0 +1,6 @@
+write_fits_map_wheader
+======================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: write_fits_map_wheader

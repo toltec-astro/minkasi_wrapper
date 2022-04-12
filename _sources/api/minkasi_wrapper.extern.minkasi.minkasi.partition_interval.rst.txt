@@ -1,0 +1,6 @@
+partition_interval
+==================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: partition_interval

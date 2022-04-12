@@ -1,0 +1,29 @@
+tsCalib
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsCalib
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsCalib.axpy
+      ~tsCalib.clear
+      ~tsCalib.copy
+      ~tsCalib.dot
+      ~tsCalib.map2tod
+      ~tsCalib.tod2map
+      ~tsCalib.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: map2tod
+   .. automethod:: tod2map
+   .. automethod:: write

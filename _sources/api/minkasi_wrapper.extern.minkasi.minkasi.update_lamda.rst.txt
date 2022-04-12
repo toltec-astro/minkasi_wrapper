@@ -1,0 +1,6 @@
+update_lamda
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: update_lamda

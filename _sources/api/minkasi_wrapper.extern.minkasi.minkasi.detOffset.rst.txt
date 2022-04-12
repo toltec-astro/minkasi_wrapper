@@ -1,0 +1,29 @@
+detOffset
+=========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: detOffset
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~detOffset.axpy
+      ~detOffset.clear
+      ~detOffset.copy
+      ~detOffset.dot
+      ~detOffset.map2tod
+      ~detOffset.tod2map
+      ~detOffset.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: map2tod
+   .. automethod:: tod2map
+   .. automethod:: write

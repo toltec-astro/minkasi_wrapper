@@ -1,0 +1,17 @@
+SkyMapCar
+=========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: SkyMapCar
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~SkyMapCar.pix_from_radec
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: pix_from_radec

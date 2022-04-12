@@ -1,0 +1,39 @@
+CutsCompact
+===========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: CutsCompact
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~CutsCompact.add_cut
+      ~CutsCompact.apply_prior
+      ~CutsCompact.axpy
+      ~CutsCompact.clear
+      ~CutsCompact.copy
+      ~CutsCompact.cuts_from_array
+      ~CutsCompact.dot
+      ~CutsCompact.get_imap
+      ~CutsCompact.map2tod
+      ~CutsCompact.merge_cuts
+      ~CutsCompact.tod2map
+      ~CutsCompact.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_cut
+   .. automethod:: apply_prior
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: cuts_from_array
+   .. automethod:: dot
+   .. automethod:: get_imap
+   .. automethod:: map2tod
+   .. automethod:: merge_cuts
+   .. automethod:: tod2map
+   .. automethod:: write

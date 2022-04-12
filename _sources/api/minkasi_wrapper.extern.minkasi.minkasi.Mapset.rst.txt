@@ -1,0 +1,33 @@
+Mapset
+======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: Mapset
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Mapset.add_map
+      ~Mapset.apply_prior
+      ~Mapset.axpy
+      ~Mapset.clear
+      ~Mapset.clear_caches
+      ~Mapset.copy
+      ~Mapset.dot
+      ~Mapset.get_caches
+      ~Mapset.mpi_reduce
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_map
+   .. automethod:: apply_prior
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: clear_caches
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: get_caches
+   .. automethod:: mpi_reduce

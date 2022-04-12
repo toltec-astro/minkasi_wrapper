@@ -1,0 +1,6 @@
+truncate_tod
+============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: truncate_tod

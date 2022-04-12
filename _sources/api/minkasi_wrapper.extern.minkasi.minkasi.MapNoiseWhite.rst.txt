@@ -1,0 +1,17 @@
+MapNoiseWhite
+=============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: MapNoiseWhite
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~MapNoiseWhite.apply_noise
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise

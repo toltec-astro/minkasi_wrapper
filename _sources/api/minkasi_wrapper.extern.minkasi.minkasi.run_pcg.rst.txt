@@ -1,0 +1,6 @@
+run_pcg
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: run_pcg

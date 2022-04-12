@@ -1,0 +1,17 @@
+NoiseWhiteNotch
+===============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: NoiseWhiteNotch
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NoiseWhiteNotch.apply_noise
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise

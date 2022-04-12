@@ -1,0 +1,6 @@
+derivs_from_elliptical_gauss
+============================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: derivs_from_elliptical_gauss

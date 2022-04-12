@@ -1,0 +1,6 @@
+split_partitioned_vec
+=====================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: split_partitioned_vec

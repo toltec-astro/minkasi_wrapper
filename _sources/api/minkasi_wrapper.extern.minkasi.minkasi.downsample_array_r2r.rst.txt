@@ -1,0 +1,6 @@
+downsample_array_r2r
+====================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: downsample_array_r2r

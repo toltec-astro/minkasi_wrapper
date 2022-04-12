@@ -1,0 +1,6 @@
+isobeta_src_chisq
+=================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: isobeta_src_chisq

@@ -1,0 +1,6 @@
+make_rings_wSlope
+=================
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: make_rings_wSlope

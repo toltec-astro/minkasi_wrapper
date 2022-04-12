@@ -1,0 +1,17 @@
+NoiseBinnedDet
+==============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: NoiseBinnedDet
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NoiseBinnedDet.apply_noise
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_noise

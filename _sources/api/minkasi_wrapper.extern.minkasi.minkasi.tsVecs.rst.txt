@@ -1,0 +1,19 @@
+tsVecs
+======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsVecs
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsVecs.map2tod
+      ~tsVecs.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: map2tod
+   .. automethod:: tod2map

@@ -1,0 +1,19 @@
+tsStripes_old
+=============
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsStripes_old
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsStripes_old.map2tod
+      ~tsStripes_old.tod2map
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: map2tod
+   .. automethod:: tod2map

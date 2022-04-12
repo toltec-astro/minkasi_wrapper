@@ -1,0 +1,27 @@
+tsGeneric
+=========
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autoclass:: tsGeneric
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~tsGeneric.apply_prior
+      ~tsGeneric.axpy
+      ~tsGeneric.clear
+      ~tsGeneric.copy
+      ~tsGeneric.dot
+      ~tsGeneric.write
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: apply_prior
+   .. automethod:: axpy
+   .. automethod:: clear
+   .. automethod:: copy
+   .. automethod:: dot
+   .. automethod:: write

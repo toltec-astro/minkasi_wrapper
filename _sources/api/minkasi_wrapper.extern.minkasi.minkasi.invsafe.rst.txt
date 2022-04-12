@@ -1,0 +1,6 @@
+invsafe
+=======
+
+.. currentmodule:: minkasi_wrapper.extern.minkasi.minkasi
+
+.. autofunction:: invsafe
