@@ -1,14 +1,22 @@
-Documentation
+==============
+MinkasiWrapper
+==============
+
+.. include:: ../README.rst
+
+
+=============
+Reference/API
 =============
 
-This is the documentation for MinkasiWrapper.
+.. automodapi:: minkasi_wrapper
+.. automodapi:: minkasi_wrapper.extern.minkasi.minkasi
 
-.. toctree::
-  :maxdepth: 2
 
-  minkasi_wrapper/index.rst
+=====
+Index
+=====
 
-.. note:: The layout of this directory is simply a suggestion.  To follow
-          traditional practice, do *not* edit this page, but instead place
-          all documentation for the package inside ``minkasi_wrapper/``.
-          You can follow this practice or choose your own layout.
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
