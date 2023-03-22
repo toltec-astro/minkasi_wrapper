@@ -1,22 +1,24 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>minkasi_wrapper.extern.minkasi.minkasi &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <title>minkasi_wrapper.extern.minkasi.minkasi &#8212; minkasi_wrapper v0.1.2.dev6+gf1ee8ad.d20230322</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap-astropy.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
     <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
-    <link rel="shortcut icon" href="../../../../_static/astropy_logo.ico"/>
+    <link rel="icon" href="../../../../_static/astropy_logo.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -46,7 +48,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="../../../../index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	<a href="../../../../index.html">minkasi_wrapper v0.1.2.dev6+gf1ee8ad.d20230322</a>
 	 &#187;
       </li>
       <li><a href="../../../index.html" accesskey="U">Module code</a> &#187;</li>
@@ -75,6 +77,9 @@
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
+<span class="kn">import</span> <span class="nn">gc</span>
+
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">healpy</span>
     <span class="n">have_healpy</span><span class="o">=</span><span class="kc">True</span>
@@ -117,6 +122,12 @@
 <span class="kn">from</span> <span class="nn">.._minkasi_init</span> <span class="kn">import</span> <span class="n">mylib</span>
 <span class="n">tod2map_simple_c</span><span class="o">=</span><span class="n">mylib</span><span class="o">.</span><span class="n">tod2map_simple</span>
 <span class="n">tod2map_simple_c</span><span class="o">.</span><span class="n">argtypes</span><span class="o">=</span><span class="p">[</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">]</span>
+
+<span class="n">tod2map_atomic_c</span><span class="o">=</span><span class="n">mylib</span><span class="o">.</span><span class="n">tod2map_atomic</span>
+<span class="n">tod2map_atomic_c</span><span class="o">.</span><span class="n">argtypes</span><span class="o">=</span><span class="p">[</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">]</span>
+
+<span class="c1">#tod2map_everyone_c=mylib.tod2map_everyone</span>
+<span class="c1">#tod2map_everyone_c.argtypes=[ctypes.c_void_p,ctypes.c_void_p,ctypes.c_int,ctypes.c_int,ctypes.c_void_p,ctypes.c_int,ctypes.c_void_p,ctypes.c_int]</span>
 
 <span class="n">tod2map_omp_c</span><span class="o">=</span><span class="n">mylib</span><span class="o">.</span><span class="n">tod2map_omp</span>
 <span class="n">tod2map_omp_c</span><span class="o">.</span><span class="n">argtypes</span><span class="o">=</span><span class="p">[</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">]</span>
@@ -181,7 +192,7 @@
 
 
 <div class="viewcode-block" id="y2rj"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.y2rj.html#minkasi_wrapper.extern.minkasi.minkasi.y2rj">[docs]</a><span class="k">def</span> <span class="nf">y2rj</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;conversion to multiply a y map by to get a Rayleigh-Jeans normalized map</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;conversion to multiply a y map by to get a Rayleigh-Jeans normalized map</span>
 <span class="sd">    note that it doesn&#39;t have the T_cmb at the end, so the value for low frequencies</span>
 <span class="sd">    is -2.&quot;&quot;&quot;</span>
     <span class="n">kb</span><span class="o">=</span><span class="mf">1.38064852e-16</span>
@@ -194,7 +205,7 @@
     <span class="k">return</span> <span class="n">f</span></div>
 
 <div class="viewcode-block" id="planck_g"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.planck_g.html#minkasi_wrapper.extern.minkasi.minkasi.planck_g">[docs]</a><span class="k">def</span> <span class="nf">planck_g</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;conversion between T_CMB and T_RJ as a function of frequency.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;conversion between T_CMB and T_RJ as a function of frequency.&quot;&quot;&quot;</span>
     <span class="n">kb</span><span class="o">=</span><span class="mf">1.38064852e-16</span>
     <span class="n">h</span><span class="o">=</span><span class="mf">6.62607004e-27</span>
     <span class="n">T</span><span class="o">=</span><span class="mf">2.725</span>
@@ -229,13 +240,19 @@
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">ipix</span><span class="o">.</span><span class="n">dtype</span><span class="o">==</span><span class="s1">&#39;int32&#39;</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning - ipix is not int32 in tod2map_simple.  this is likely to produce garbage results.&quot;</span><span class="p">)</span>
     <span class="n">tod2map_simple_c</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">dat</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">ndet</span><span class="p">,</span><span class="n">ndata</span><span class="p">,</span><span class="n">ipix</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+<div class="viewcode-block" id="tod2map_everyone"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_everyone.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_everyone">[docs]</a><span class="k">def</span> <span class="nf">tod2map_everyone</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">,</span><span class="n">edges</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span><span class="o">==</span><span class="n">get_nthread</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">tod2map_everyone_c</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">dat</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">dat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">dat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ipix</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="nb">map</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="n">edges</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="tod2map_omp"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp">[docs]</a><span class="k">def</span> <span class="nf">tod2map_omp</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">):</span>
+<div class="viewcode-block" id="tod2map_omp"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp">[docs]</a><span class="k">def</span> <span class="nf">tod2map_omp</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">,</span><span class="n">atomic</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">ndet</span><span class="o">=</span><span class="n">dat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">ndata</span><span class="o">=</span><span class="n">dat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">ipix</span><span class="o">.</span><span class="n">dtype</span><span class="o">==</span><span class="s1">&#39;int32&#39;</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning - ipix is not int32 in tod2map_omp.  this is likely to produce garbage results.&quot;</span><span class="p">)</span>
-    <span class="n">tod2map_omp_c</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">dat</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">ndet</span><span class="p">,</span><span class="n">ndata</span><span class="p">,</span><span class="n">ipix</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="nb">map</span><span class="o">.</span><span class="n">size</span><span class="p">)</span></div>
+    <span class="k">if</span> <span class="n">atomic</span><span class="p">:</span>
+        <span class="n">tod2map_atomic_c</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">dat</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">ndet</span><span class="p">,</span><span class="n">ndata</span><span class="p">,</span><span class="n">ipix</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="nb">map</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tod2map_omp_c</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">dat</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">ndet</span><span class="p">,</span><span class="n">ndata</span><span class="p">,</span><span class="n">ipix</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="nb">map</span><span class="o">.</span><span class="n">size</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="tod2map_cached"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached">[docs]</a><span class="k">def</span> <span class="nf">tod2map_cached</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">):</span>
     <span class="n">ndet</span><span class="o">=</span><span class="n">dat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -319,7 +336,7 @@
 
 
 <div class="viewcode-block" id="segs_from_vec"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.segs_from_vec.html#minkasi_wrapper.extern.minkasi.minkasi.segs_from_vec">[docs]</a><span class="k">def</span> <span class="nf">segs_from_vec</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span><span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; segs_from_vec(vec,pad=True)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; segs_from_vec(vec,pad=True)</span>
 <span class="sd">    return the starting/stopping points of regions marked False in vec.  For use in e.g. generating</span>
 <span class="sd">    cuts from a vector/array.  If pad is False, assume vector is already True-padded&quot;&quot;&quot;</span>
     <span class="c1">#insert input vector into a True-padded vector do make reasoning about starting/stopping points</span>
@@ -933,7 +950,7 @@
         <span class="n">x</span><span class="o">=</span><span class="n">x_new</span>
     <span class="k">return</span> <span class="n">x</span>
 
-<div class="viewcode-block" id="run_pcg"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.run_pcg.html#minkasi_wrapper.extern.minkasi.minkasi.run_pcg">[docs]</a><span class="k">def</span> <span class="nf">run_pcg</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">tods</span><span class="p">,</span><span class="n">precon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">outroot</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">,</span><span class="n">save_iters</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">save_ind</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">save_tail</span><span class="o">=</span><span class="s1">&#39;.fits&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="run_pcg"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.run_pcg.html#minkasi_wrapper.extern.minkasi.minkasi.run_pcg">[docs]</a><span class="k">def</span> <span class="nf">run_pcg</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">tods</span><span class="p">,</span><span class="n">precon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">outroot</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">,</span><span class="n">save_iters</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">save_ind</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">save_tail</span><span class="o">=</span><span class="s1">&#39;.fits&#39;</span><span class="p">,</span><span class="n">plot_iters</span><span class="o">=</span><span class="p">[],</span><span class="n">plot_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">plot_ind</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     
     <span class="n">t1</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="n">Ax</span><span class="o">=</span><span class="n">tods</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
@@ -1001,8 +1018,17 @@
         <span class="k">if</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="n">save_iters</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">myrank</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
                 <span class="n">x</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="n">save_ind</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outroot</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nb">repr</span><span class="p">(</span><span class="nb">iter</span><span class="p">)</span><span class="o">+</span><span class="n">save_tail</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="n">plot_iters</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;plotting on iteration &#39;</span><span class="p">,</span><span class="nb">iter</span><span class="p">)</span>
+            <span class="n">x</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="n">plot_ind</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_info</span><span class="p">)</span>
+
     <span class="n">tave</span><span class="o">=</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">tloop</span><span class="p">)</span><span class="o">/</span><span class="n">maxiter</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average time per iteration was &#39;</span><span class="p">,</span><span class="n">tave</span><span class="p">,</span><span class="s1">&#39; with effective throughput &#39;</span><span class="p">,</span><span class="n">nsamp</span><span class="o">/</span><span class="n">tave</span><span class="o">/</span><span class="mf">1e6</span><span class="p">,</span><span class="s1">&#39; Msamp/s&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="n">plot_iters</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;plotting on iteration &#39;</span><span class="p">,</span><span class="nb">iter</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="n">plot_ind</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_info</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;skipping plotting on iter &#39;</span><span class="p">,</span><span class="nb">iter</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">x</span></div>
 
 <div class="viewcode-block" id="run_pcg_wprior"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior.html#minkasi_wrapper.extern.minkasi.minkasi.run_pcg_wprior">[docs]</a><span class="k">def</span> <span class="nf">run_pcg_wprior</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">tods</span><span class="p">,</span><span class="n">prior</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">precon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">outroot</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">,</span><span class="n">save_iters</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">save_ind</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">save_tail</span><span class="o">=</span><span class="s1">&#39;.fits&#39;</span><span class="p">):</span>
@@ -1172,7 +1198,7 @@
 
 
 <div class="viewcode-block" id="get_grad_mask_2d"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.get_grad_mask_2d.html#minkasi_wrapper.extern.minkasi.minkasi.get_grad_mask_2d">[docs]</a><span class="k">def</span> <span class="nf">get_grad_mask_2d</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">todvec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">thresh</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span><span class="n">noisemap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">hitsmap</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;make a mask that has an estimate of the gradient within a pixel.  Look at the </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;make a mask that has an estimate of the gradient within a pixel.  Look at the </span>
 <span class="sd">    rough expected noise to get an idea of which gradients are substantially larger than</span>
 <span class="sd">    the map noise.&quot;&quot;&quot;</span>
     <span class="k">if</span>  <span class="n">noisemap</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1955,7 +1981,7 @@
         <span class="k">pass</span></div></div>
 
 <div class="viewcode-block" id="tsMultiModel"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.tsMultiModel.html#minkasi_wrapper.extern.minkasi.minkasi.tsMultiModel">[docs]</a><span class="k">class</span> <span class="nc">tsMultiModel</span><span class="p">(</span><span class="n">tsModel</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A class to hold timestream models that are shared between groups of TODs.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class to hold timestream models that are shared between groups of TODs.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">todvec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">todtags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">modelclass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">tag</span><span class="o">=</span><span class="s1">&#39;ts_multi_model&#39;</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>        
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="o">=</span><span class="n">tag</span>
@@ -2117,6 +2143,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">purge_pixellization</span><span class="o">=</span><span class="n">purge_pixellization</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">caches</span><span class="o">=</span><span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cosdec</span><span class="o">=</span><span class="n">cosdec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="kc">None</span>
 <div class="viewcode-block" id="SkyMap.get_caches"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.get_caches">[docs]</a>    <span class="k">def</span> <span class="nf">get_caches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">npix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nx</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ny</span>
         <span class="n">nthread</span><span class="o">=</span><span class="n">get_nthread</span><span class="p">()</span>
@@ -2124,6 +2151,51 @@
 <div class="viewcode-block" id="SkyMap.clear_caches"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.clear_caches">[docs]</a>    <span class="k">def</span> <span class="nf">clear_caches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[:]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">caches</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">caches</span><span class="o">=</span><span class="kc">None</span></div>
+<div class="viewcode-block" id="SkyMap.set_tod2map"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map">[docs]</a>    <span class="k">def</span> <span class="nf">set_tod2map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">todvec</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Select which method of tod2map to use.  options include simple (1 proc), omp (everyone makes a map copy), everyone (everyone loops through</span>
+<span class="sd">           all the data but assigns only to their own piece), atomic (no map copy, accumulate via atomic adds), and cached (every thread has a sticky</span>
+<span class="sd">           copy of the map).&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nproc</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tod2map_simple</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tod2map_omp</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;omp&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tod2map_omp</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;simple&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tod2map_simple</span>
+        <span class="k">if</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;everyone&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">todvec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;need tods when setting to everyone so we can know which pieces belong to which threads&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">tod</span> <span class="ow">in</span> <span class="n">todvec</span><span class="o">.</span><span class="n">tods</span><span class="p">:</span>
+                <span class="n">ipix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pix</span><span class="p">(</span><span class="n">tod</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">ipix</span><span class="o">=</span><span class="n">ipix</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">ipix</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">ipix</span><span class="p">)</span>
+                <span class="n">ipix</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+                <span class="n">inds</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ipix</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nproc</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="n">nproc</span>
+                <span class="n">inds</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inds</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
+                <span class="n">tod</span><span class="o">.</span><span class="n">save_pixellization</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="o">+</span><span class="s1">&#39;_edges&#39;</span><span class="p">,</span><span class="n">inds</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tod2map_everyone</span>
+        <span class="k">if</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;cached&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_caches</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tod2map_cached</span>
+        <span class="k">if</span> <span class="n">method</span><span class="o">==</span><span class="s1">&#39;atomic&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tod2map_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">todmap_atomic</span></div>
+<div class="viewcode-block" id="SkyMap.tod2map_atomic"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic">[docs]</a>    <span class="k">def</span> <span class="nf">tod2map_atomic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tod</span><span class="p">,</span><span class="n">dat</span><span class="p">):</span>
+        <span class="n">ipix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pix</span><span class="p">(</span><span class="n">tod</span><span class="p">)</span>
+        <span class="n">tod2map_omp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
+<div class="viewcode-block" id="SkyMap.todmap_omp"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp">[docs]</a>    <span class="k">def</span> <span class="nf">todmap_omp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tod</span><span class="p">,</span><span class="n">dat</span><span class="p">):</span>
+        <span class="n">ipix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pix</span><span class="p">(</span><span class="n">tod</span><span class="p">)</span>
+        <span class="n">tod2map_omp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">,</span><span class="kc">False</span><span class="p">)</span></div>
+<div class="viewcode-block" id="SkyMap.tod2map_simple"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple">[docs]</a>    <span class="k">def</span> <span class="nf">tod2map_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tod</span><span class="p">,</span><span class="n">dat</span><span class="p">):</span>
+        <span class="n">ipix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pix</span><span class="p">(</span><span class="n">tod</span><span class="p">)</span>
+        <span class="n">tod2map_simple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">)</span></div>
+    <span class="c1">#def tod2map_cached(self.map,dat,ipix):</span>
+    <span class="c1">#    ipix=self.get_pix(tod)</span>
+    <span class="c1">#    tod2map_cached(map,dat,ipix)</span>
+
 <div class="viewcode-block" id="SkyMap.copy"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
             <span class="n">newmap</span><span class="o">=</span><span class="n">SkyMap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lims</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">pixsize</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">proj</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">primes</span><span class="p">,</span><span class="n">cosdec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cosdec</span><span class="p">,</span><span class="n">nx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ny</span><span class="p">,</span><span class="n">mywcs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="p">,</span><span class="n">tag</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
@@ -2199,7 +2271,27 @@
         <span class="c1">#map2tod(dat,self.map,tod.info[&#39;ipix&#39;],do_add,do_omp)</span>
         <span class="n">map2tod</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">ipix</span><span class="p">,</span><span class="n">do_add</span><span class="p">,</span><span class="n">do_omp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SkyMap.tod2map"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map">[docs]</a>    <span class="k">def</span> <span class="nf">tod2map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tod</span><span class="p">,</span><span class="n">dat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">do_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">do_omp</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="SkyMap.tod2map"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map">[docs]</a>    <span class="k">def</span> <span class="nf">tod2map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tod</span><span class="p">,</span><span class="n">dat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">do_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">do_omp</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>        
+        <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dat</span><span class="o">=</span><span class="n">tod</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">do_add</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">ipix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pix</span><span class="p">(</span><span class="n">tod</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">caches</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="c1">#tod2map_cached(self.caches,dat,tod.info[&#39;ipix&#39;])</span>
+            <span class="n">tod2map_cached</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">caches</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">do_omp</span><span class="p">:</span>
+                <span class="c1">#tod2map_omp(self.map,dat,tod.info[&#39;ipix&#39;])</span>
+                <span class="n">tod2map_omp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1">#tod2map_simple(self.map,dat,tod.info[&#39;ipix&#39;])</span>
+                <span class="n">tod2map_simple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">dat</span><span class="p">,</span><span class="n">ipix</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">purge_pixellization</span><span class="p">:</span>
+            <span class="n">tod</span><span class="o">.</span><span class="n">clear_saved_pix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SkyMap.tod2map_old"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old">[docs]</a>    <span class="k">def</span> <span class="nf">tod2map_old</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tod</span><span class="p">,</span><span class="n">dat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">do_add</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">do_omp</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">dat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">dat</span><span class="o">=</span><span class="n">tod</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">do_add</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
@@ -2231,6 +2323,30 @@
         <span class="n">tot</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">*</span><span class="nb">map</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">tot</span></div>
         
+<div class="viewcode-block" id="SkyMap.plot"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">plot_info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">clf</span><span class="o">=</span><span class="kc">True</span>
+        <span class="n">pause</span><span class="o">=</span><span class="kc">True</span>
+        <span class="n">pause_len</span><span class="o">=</span><span class="mf">0.001</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">plot_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;vmin&#39;</span> <span class="ow">in</span> <span class="n">plot_info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">vmin</span><span class="o">=</span><span class="n">plot_info</span><span class="p">[</span><span class="s1">&#39;vmin&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;vmax&#39;</span> <span class="ow">in</span> <span class="n">plot_info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">vmax</span><span class="o">=</span><span class="n">plot_info</span><span class="p">[</span><span class="s1">&#39;vmax&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;clf&#39;</span> <span class="ow">in</span> <span class="n">plot_info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">clf</span><span class="o">=</span><span class="n">plot_info</span><span class="p">[</span><span class="s1">&#39;clf&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;pause&#39;</span> <span class="ow">in</span> <span class="n">plot_info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">pause</span><span class="o">=</span><span class="n">plot_info</span><span class="p">[</span><span class="s1">&#39;pause&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">pause_len</span> <span class="ow">in</span> <span class="n">plot_info</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">pause_len</span><span class="o">=</span><span class="n">plot_info</span><span class="p">[</span><span class="s1">&#39;pause_len&#39;</span><span class="p">]</span>
+        <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+        <span class="k">if</span> <span class="n">clf</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pause</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="n">pause_len</span><span class="p">)</span></div>
+
 <div class="viewcode-block" id="SkyMap.write"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fname</span><span class="o">=</span><span class="s1">&#39;map.fits&#39;</span><span class="p">):</span>
         <span class="n">header</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">to_header</span><span class="p">()</span>
         <span class="k">if</span> <span class="kc">True</span><span class="p">:</span> <span class="c1">#try a patch to fix the wcs xxx </span>
@@ -2315,7 +2431,7 @@
 <div class="viewcode-block" id="SkyMapCoarse.tod2map"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMapCoarse.tod2map">[docs]</a>    <span class="k">def</span> <span class="nf">tod2map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span></div></div>
 <div class="viewcode-block" id="SkyMapTwoRes"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMapTwoRes">[docs]</a><span class="k">class</span> <span class="nc">SkyMapTwoRes</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;A pair of maps to serve as a prior for multi-experiment mapping.  This would e.g. be the ACT map that e.g. Mustang should agree</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A pair of maps to serve as a prior for multi-experiment mapping.  This would e.g. be the ACT map that e.g. Mustang should agree</span>
 <span class="sd">    with on large scales.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">map_lowres</span><span class="p">,</span><span class="n">lims</span><span class="p">,</span><span class="n">osamp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">smooth_fac</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
         <span class="n">small_wcs</span><span class="p">,</span><span class="n">lims_use</span><span class="p">,</span><span class="n">map_corner</span><span class="o">=</span><span class="n">get_aligned_map_subregion_car</span><span class="p">(</span><span class="n">lims</span><span class="p">,</span><span class="n">map_lowres</span><span class="p">,</span><span class="n">osamp</span><span class="o">=</span><span class="n">osamp</span><span class="p">)</span>
@@ -3656,8 +3772,8 @@
             <span class="n">noisevec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">dat_use</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
             <span class="n">dat_use</span><span class="o">=</span><span class="n">dat_use</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="n">noisevec</span><span class="p">],</span><span class="n">dat_use</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">u_in</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">dat_use</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">ndet</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">size</span>
+            <span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">dat_use</span><span class="p">,</span><span class="n">full_matrices</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ndet</span><span class="o">=</span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">u</span><span class="o">=</span><span class="n">u_in</span>
             <span class="k">assert</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -3730,7 +3846,7 @@
         <span class="k">return</span> <span class="n">dat</span></div>
 
 <div class="viewcode-block" id="NoiseSmoothedSVD.get_det_weights"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD.html#minkasi_wrapper.extern.minkasi.minkasi.NoiseSmoothedSVD.get_det_weights">[docs]</a>    <span class="k">def</span> <span class="nf">get_det_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Find the per-detector weights for use in making actual noise maps.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find the per-detector weights for use in making actual noise maps.&quot;&quot;&quot;</span>
         <span class="n">mode_wt</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mywt</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="c1">#tmp=np.dot(self.v.T,np.dot(np.diag(mode_wt),self.v))</span>
         <span class="n">tmp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vT</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">mode_wt</span><span class="p">),</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">))</span>
@@ -3750,7 +3866,7 @@
         <span class="n">ymax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;dy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span></div>
 <div class="viewcode-block" id="Tod.set_apix"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.Tod.html#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_apix">[docs]</a>    <span class="k">def</span> <span class="nf">set_apix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;calculates dxel normalized to +-1 from elevation&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;calculates dxel normalized to +-1 from elevation&#39;&#39;&#39;</span>
         <span class="c1">#TBD pass in and calculate scan center&#39;s elevation vs time</span>
         <span class="n">elev</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;elev&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">elev</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="n">elev</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
@@ -3924,7 +4040,7 @@
         
         <span class="k">return</span> <span class="n">resid</span></div>
 <div class="viewcode-block" id="Tod.set_noise_smoothed_svd"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.Tod.html#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_noise_smoothed_svd">[docs]</a>    <span class="k">def</span> <span class="nf">set_noise_smoothed_svd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fwhm</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">pars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">prewhiten</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">fit_powlaw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;If func comes in as not empty, assume we can call func(pars,tod) to get a predicted model for the tod that</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;If func comes in as not empty, assume we can call func(pars,tod) to get a predicted model for the tod that</span>
 <span class="sd">        we subtract off before estimating the noise.&#39;&#39;&#39;</span>
 
         
@@ -4063,7 +4179,7 @@
         <span class="n">chisq</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dat_filt</span><span class="o">*</span><span class="n">dat</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">chisq</span></div>
 <div class="viewcode-block" id="Tod.prior_from_skymap"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.Tod.html#minkasi_wrapper.extern.minkasi.minkasi.Tod.prior_from_skymap">[docs]</a>    <span class="k">def</span> <span class="nf">prior_from_skymap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">skymap</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;stuff.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;stuff.</span>
 <span class="sd">        prior_from_skymap(self,skymap):</span>
 <span class="sd">        Given e.g. the gradient of a map that has been zeroed under some threshold,</span>
 <span class="sd">        return a CutsCompact object that can be used as a prior for solving for per-sample deviations</span>
@@ -4279,6 +4395,112 @@
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;missing nm20 for &#39;</span><span class="p">,</span><span class="n">fname</span><span class="p">)</span>
 
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">dat</span></div>
+
+<div class="viewcode-block" id="read_tod_from_toltec_nc"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_toltec_nc.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_toltec_nc">[docs]</a><span class="k">def</span> <span class="nf">read_tod_from_toltec_nc</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="n">arrayindex</span><span class="p">,</span> <span class="n">sample_slice</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">ncfile</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">sample_slice</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sample_slice</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;TIME&#39;</span> <span class="ow">in</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+        <span class="n">v_time</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;TIME&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">v_time</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;TelTime&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;ELEV&#39;</span> <span class="ow">in</span> <span class="n">ncfile</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+        <span class="n">v_elev</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;ELEV&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">v_elev</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;TelElDes&#39;</span><span class="p">]</span>
+    <span class="n">all_data</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;DATA&#39;</span><span class="p">]</span>
+    <span class="n">all_dx</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;DX&#39;</span><span class="p">]</span>
+    <span class="n">all_dy</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;DY&#39;</span><span class="p">]</span>
+    <span class="n">all_elev</span> <span class="o">=</span> <span class="n">v_elev</span> 
+    <span class="n">all_flag</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;FLAG&#39;</span><span class="p">]</span>
+    <span class="n">all_pixid</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;PIXID&#39;</span><span class="p">]</span>
+    <span class="n">all_time</span> <span class="o">=</span> <span class="n">v_time</span> 
+    <span class="n">all_arrayid</span> <span class="o">=</span> <span class="n">ncfile</span><span class="p">[</span><span class="s1">&#39;ARRAYID&#39;</span><span class="p">]</span>
+
+    <span class="c1">#Can be read in but unneeded</span>
+
+    <span class="c1"># all_azoff = ncfile[&#39;AZOFF&#39;]</span>
+    <span class="c1"># all_eloff = ncfile[&#39;ELOFF&#39;]</span>
+    <span class="c1"># all_afwhm = ncfile[&#39;AFWHM&#39;]</span>
+    <span class="c1"># all_bfwhm = ncfile[&#39;BFWHM&#39;]</span>
+
+
+    <span class="n">select_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_arrayid</span><span class="p">)</span><span class="o">==</span><span class="n">arrayindex</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">selected_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">sample_slice</span><span class="p">,</span><span class="n">select_vals</span><span class="p">]</span>
+    <span class="n">selected_dx</span> <span class="o">=</span> <span class="n">all_dx</span><span class="p">[</span><span class="n">sample_slice</span><span class="p">,</span><span class="n">select_vals</span><span class="p">]</span>
+    <span class="n">selected_dy</span> <span class="o">=</span> <span class="n">all_dy</span><span class="p">[</span><span class="n">sample_slice</span><span class="p">,</span><span class="n">select_vals</span><span class="p">]</span>
+    <span class="n">selected_elev</span> <span class="o">=</span> <span class="n">all_elev</span><span class="p">[</span><span class="n">sample_slice</span><span class="p">]</span>
+    <span class="n">selected_flag</span> <span class="o">=</span> <span class="n">all_flag</span><span class="p">[</span><span class="n">sample_slice</span><span class="p">,</span><span class="n">select_vals</span><span class="p">]</span>
+    <span class="n">selected_pixid</span> <span class="o">=</span> <span class="n">all_pixid</span><span class="p">[</span><span class="n">select_vals</span><span class="p">]</span>
+    <span class="n">selected_time</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">sample_slice</span><span class="p">]</span>
+
+    <span class="c1">#not needed</span>
+    <span class="c1"># selected_azoff = all_azoff[select_vals]</span>
+    <span class="c1"># selected_eloff = all_eloff[select_vals]</span>
+    <span class="c1"># selected_afwhm = all_afwhm[select_vals]</span>
+    <span class="c1"># selected_bfwhm = all_bfwhm[select_vals]</span>
+
+
+    <span class="n">ndet</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">selected_pixid</span><span class="p">)</span>
+    <span class="n">nsamp</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">selected_time</span><span class="p">)</span>
+
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;read data file </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s1"> with slice=</span><span class="si">{</span><span class="n">sample_slice</span><span class="si">}</span><span class="s1"> took </span><span class="si">{</span><span class="n">t1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
+    
+    <span class="n">ff</span><span class="o">=</span><span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">xmin</span><span class="o">=</span><span class="n">selected_dx</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">*</span><span class="n">ff</span>
+    <span class="n">xmax</span><span class="o">=</span><span class="n">selected_dx</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">ff</span>
+    <span class="n">ymin</span><span class="o">=</span><span class="n">selected_dy</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">*</span><span class="n">ff</span>
+    <span class="n">ymax</span><span class="o">=</span><span class="n">selected_dy</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="n">ff</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nsamp = &#39;</span><span class="p">,</span><span class="n">nsamp</span><span class="p">,</span><span class="s1">&#39;  ,&#39;</span><span class="p">,</span><span class="s1">&#39;ndet = &#39;</span><span class="p">,</span><span class="n">ndet</span><span class="p">,</span><span class="s1">&#39;  ,&#39;</span><span class="p">,</span> <span class="s1">&#39;ndatapoints = &#39;</span><span class="p">,</span><span class="n">ndet</span><span class="o">*</span><span class="n">nsamp</span><span class="p">,</span> <span class="s1">&#39;  ,&#39;</span><span class="p">,</span><span class="s1">&#39; on &#39;</span><span class="p">,</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;with lims &#39;</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span> <span class="p">)</span>
+    
+    <span class="n">dat</span><span class="o">=</span><span class="p">{}</span>
+
+    <span class="n">ndet</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>
+    <span class="n">nsamp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">nsamp</span><span class="p">)</span>
+
+    <span class="n">samp_ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nsamp</span><span class="p">)</span>
+    <span class="n">det_ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">ndet</span><span class="p">)</span>
+
+
+
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;dx&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">selected_dx</span><span class="p">)</span>
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;dy&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">selected_dy</span><span class="p">)</span>
+
+    
+    <span class="n">elev</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">selected_elev</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;elev&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">det_ones</span><span class="p">,</span><span class="n">elev</span><span class="p">)</span>
+
+    <span class="n">dt</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">selected_time</span><span class="p">))</span>
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;dt&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">dt</span>
+    <span class="n">pixid</span><span class="o">=</span><span class="n">selected_pixid</span>
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;pixid&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pixid</span>
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;dat_calib&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">selected_data</span><span class="p">)</span>
+
+    <span class="c1">#work the flags out later</span>
+    <span class="c1"># if np.sum(raw[&#39;UFNU&#39;]&gt;9e5)&gt;0:</span>
+    <span class="c1">#     dat[&#39;mask&#39;]=np.reshape(raw[&#39;UFNU&#39;]&lt;9e5,dat[&#39;dat_calib&#39;].shape)</span>
+    <span class="c1">#     dat[&#39;mask_sum&#39;]=np.sum(dat[&#39;mask&#39;],axis=0)</span>
+    
+    <span class="n">dat</span><span class="p">[</span><span class="s1">&#39;fname&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">fname</span>
+
+    <span class="k">del</span> <span class="n">select_vals</span>
+    <span class="k">del</span> <span class="n">selected_data</span>
+    <span class="k">del</span> <span class="n">selected_dx</span>
+    <span class="k">del</span> <span class="n">selected_dy</span>
+    <span class="k">del</span> <span class="n">selected_elev</span>
+    <span class="k">del</span> <span class="n">selected_flag</span>
+    <span class="k">del</span> <span class="n">selected_pixid</span>
+    <span class="k">del</span> <span class="n">selected_time</span>
+    <span class="k">del</span> <span class="n">samp_ones</span>
+    <span class="k">del</span> <span class="n">det_ones</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+
+    <span class="n">ncfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">dat</span></div>
 
 <div class="viewcode-block" id="read_tod_from_fits"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits">[docs]</a><span class="k">def</span> <span class="nf">read_tod_from_fits</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="n">hdu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">branch</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -4497,7 +4719,7 @@
 
 
 <div class="viewcode-block" id="get_aligned_map_subregion_car"><a class="viewcode-back" href="../../../../api/minkasi_wrapper.extern.minkasi.minkasi.get_aligned_map_subregion_car.html#minkasi_wrapper.extern.minkasi.minkasi.get_aligned_map_subregion_car">[docs]</a><span class="k">def</span> <span class="nf">get_aligned_map_subregion_car</span><span class="p">(</span><span class="n">lims</span><span class="p">,</span><span class="n">fname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">big_wcs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">osamp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get a wcs for a subregion of a map, with optionally finer pixellization.  </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a wcs for a subregion of a map, with optionally finer pixellization.  </span>
 <span class="sd">    Designed for use in e.g. combining ACT maps and Mustang data.  Input arguments</span>
 <span class="sd">    are RA/Dec limits for the subregion (which will be tweaked as-needed) and either a </span>
 <span class="sd">    WCS structure or the name of a FITS file containing the WCS info the sub-region</span>
@@ -5095,7 +5317,7 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;iter&#39;</span><span class="p">,</span><span class="nb">iter</span><span class="p">,</span><span class="s1">&#39; max_shift is &#39;</span><span class="p">,</span><span class="n">conv_fac</span><span class="p">,</span><span class="s1">&#39; with lamda &#39;</span><span class="p">,</span><span class="n">lamda</span><span class="p">,</span><span class="n">chi_ref</span><span class="o">-</span><span class="n">chi_cur</span><span class="p">,</span><span class="n">chi_ref</span><span class="o">-</span><span class="n">chi_new</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">pp</span><span class="p">,</span><span class="n">chi_cur</span></div>
 <span class="k">def</span> <span class="nf">_fit_timestreams_with_derivs_old</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">pars</span><span class="p">,</span><span class="n">tods</span><span class="p">,</span><span class="n">to_fit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">to_scale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">scale_facs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Fit a model to timestreams.  func should return the model and the derivatives evaluated at </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Fit a model to timestreams.  func should return the model and the derivatives evaluated at </span>
 <span class="sd">    the parameter values in pars.  to_fit says which parameters to float.  0 to fix, 1 to float, and anything</span>
 <span class="sd">    larger than 1 is expected to vary together (e.g. shifting a TOD pointing mode you could put in a 2 for all RA offsets </span>
 <span class="sd">    and a 3 for all dec offsets.).  to_scale will normalize</span>
@@ -5267,9 +5489,9 @@
   <p class="pull-right"> &nbsp;
     <a href="#">Back to Top</a></p>
   <p>
-    &copy; Copyright 2022, Zhiyuan Ma.<br/>
-    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
-    Last built 12 Apr 2022. <br/>
+    &copy; Copyright 2023, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 6.1.3. &nbsp;
+    Last built 22 Mar 2023. <br/>
   </p>
 </footer>
   </body>

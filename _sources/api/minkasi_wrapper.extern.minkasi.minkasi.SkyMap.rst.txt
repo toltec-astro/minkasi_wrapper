@@ -22,8 +22,14 @@ SkyMap
       ~SkyMap.map2tod
       ~SkyMap.mpi_reduce
       ~SkyMap.pix_from_radec
+      ~SkyMap.plot
       ~SkyMap.r_th_maps
+      ~SkyMap.set_tod2map
       ~SkyMap.tod2map
+      ~SkyMap.tod2map_atomic
+      ~SkyMap.tod2map_old
+      ~SkyMap.tod2map_simple
+      ~SkyMap.todmap_omp
       ~SkyMap.write
 
    .. rubric:: Methods Documentation
@@ -40,6 +46,12 @@ SkyMap
    .. automethod:: map2tod
    .. automethod:: mpi_reduce
    .. automethod:: pix_from_radec
+   .. automethod:: plot
    .. automethod:: r_th_maps
+   .. automethod:: set_tod2map
    .. automethod:: tod2map
+   .. automethod:: tod2map_atomic
+   .. automethod:: tod2map_old
+   .. automethod:: tod2map_simple
+   .. automethod:: todmap_omp
    .. automethod:: write

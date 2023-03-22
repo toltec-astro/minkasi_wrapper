@@ -1,22 +1,24 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <title>Index &#8212; minkasi_wrapper v0.1.2.dev6+gf1ee8ad.d20230322</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-astropy.css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
     
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script type="text/javascript" src="_static/sidebar.js"></script>
     <script type="text/javascript" src="_static/copybutton.js"></script>
-    <link rel="shortcut icon" href="_static/astropy_logo.ico"/>
+    <link rel="icon" href="_static/astropy_logo.ico"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
@@ -46,7 +48,7 @@
     <h3>Navigation</h3>
     <ul>
       <li>
-	<a href="index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	<a href="index.html">minkasi_wrapper v0.1.2.dev6+gf1ee8ad.d20230322</a>
 	 &#187;
       </li>
       
@@ -673,6 +675,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.planck_g.html#minkasi_wrapper.extern.minkasi.minkasi.planck_g">planck_g() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot">plot() (minkasi_wrapper.extern.minkasi.minkasi.SkyMap method)</a>
+</li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.plot_ps.html#minkasi_wrapper.extern.minkasi.minkasi.plot_ps">plot_ps() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.PolMap.html#minkasi_wrapper.extern.minkasi.minkasi.PolMap">PolMap (class in minkasi_wrapper.extern.minkasi.minkasi)</a>
@@ -701,11 +705,13 @@
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.read_octave_struct.html#minkasi_wrapper.extern.minkasi.minkasi.read_octave_struct">read_octave_struct() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits">read_tod_from_fits() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits_cbass.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_fits_cbass">read_tod_from_fits_cbass() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
+</li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_toltec_nc.html#minkasi_wrapper.extern.minkasi.minkasi.read_tod_from_toltec_nc">read_tod_from_toltec_nc() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.report_mpi.html#minkasi_wrapper.extern.minkasi.minkasi.report_mpi">report_mpi() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
@@ -768,6 +774,8 @@
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tsStripes.html#minkasi_wrapper.extern.minkasi.minkasi.tsStripes.set_prior_from_corr">set_prior_from_corr() (minkasi_wrapper.extern.minkasi.minkasi.tsStripes method)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.Tod.html#minkasi_wrapper.extern.minkasi.minkasi.Tod.set_tag">set_tag() (minkasi_wrapper.extern.minkasi.minkasi.Tod method)</a>
+</li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map">set_tod2map() (minkasi_wrapper.extern.minkasi.minkasi.SkyMap method)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap">SkyMap (class in minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
@@ -847,17 +855,29 @@
         <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tsVecs.html#minkasi_wrapper.extern.minkasi.minkasi.tsVecs.tod2map">(minkasi_wrapper.extern.minkasi.minkasi.tsVecs method)</a>
 </li>
       </ul></li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic">tod2map_atomic() (minkasi_wrapper.extern.minkasi.minkasi.SkyMap method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_cached">tod2map_cached() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_everyone.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_everyone">tod2map_everyone() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
+</li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old">tod2map_old() (minkasi_wrapper.extern.minkasi.minkasi.SkyMap method)</a>
+</li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_omp">tod2map_omp() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2map_simple.html#minkasi_wrapper.extern.minkasi.minkasi.tod2map_simple">tod2map_simple() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
+
+      <ul>
+        <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple">(minkasi_wrapper.extern.minkasi.minkasi.SkyMap method)</a>
 </li>
+      </ul></li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.Tod.html#minkasi_wrapper.extern.minkasi.minkasi.Tod.tod2mapset">tod2mapset() (minkasi_wrapper.extern.minkasi.minkasi.Tod method)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.tod2polmap.html#minkasi_wrapper.extern.minkasi.minkasi.tod2polmap">tod2polmap() (in module minkasi_wrapper.extern.minkasi.minkasi)</a>
+</li>
+      <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.SkyMap.html#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp">todmap_omp() (minkasi_wrapper.extern.minkasi.minkasi.SkyMap method)</a>
 </li>
       <li><a href="api/minkasi_wrapper.extern.minkasi.minkasi.TodVec.html#minkasi_wrapper.extern.minkasi.minkasi.TodVec">TodVec (class in minkasi_wrapper.extern.minkasi.minkasi)</a>
 </li>
@@ -955,9 +975,9 @@
   <p class="pull-right"> &nbsp;
     <a href="#">Back to Top</a></p>
   <p>
-    &copy; Copyright 2022, Zhiyuan Ma.<br/>
-    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
-    Last built 12 Apr 2022. <br/>
+    &copy; Copyright 2023, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 6.1.3. &nbsp;
+    Last built 22 Mar 2023. <br/>
   </p>
 </footer>
   </body>

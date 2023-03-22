@@ -1,23 +1,25 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>SkyMap &#8212; minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</title>
+    <title>SkyMap &#8212; minkasi_wrapper v0.1.2.dev6+gf1ee8ad.d20230322</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script type="text/javascript" src="../_static/sidebar.js"></script>
     <script type="text/javascript" src="../_static/copybutton.js"></script>
-    <link rel="shortcut icon" href="../_static/astropy_logo.ico"/>
+    <link rel="icon" href="../_static/astropy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SkyMapCar" href="minkasi_wrapper.extern.minkasi.minkasi.SkyMapCar.html" />
@@ -60,7 +62,7 @@
 	 |
       </li>
       <li>
-	<a href="../index.html">minkasi_wrapper v0.1.1.dev1+gf0cc093.d20220412</a>
+	<a href="../index.html">minkasi_wrapper v0.1.2.dev6+gf1ee8ad.d20230322</a>
 	 &#187;
       </li>
       
@@ -75,17 +77,13 @@
           <div class="body" role="main">
             
   <section id="skymap">
-<h1>SkyMap<a class="headerlink" href="#skymap" title="Permalink to this headline">¶</a></h1>
+<h1>SkyMap<a class="headerlink" href="#skymap" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">minkasi_wrapper.extern.minkasi.minkasi.</span></span><span class="sig-name descname"><span class="pre">SkyMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CAR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cosdec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mywcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ipix'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purge_pixellization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_equ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods Summary</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.assign" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a>(arr)</p></td>
 <td><p></p></td>
@@ -123,10 +121,28 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.pix_from_radec" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.pix_from_radec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pix_from_radec</span></code></a>(ra, dec)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r_th_maps</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>([plot_info])</p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r_th_maps</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_tod2map</span></code></a>([method, todvec])</p></td>
+<td><p>Select which method of tod2map to use.</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map</span></code></a>(tod[, dat, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map_atomic</span></code></a>(tod, dat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map_old</span></code></a>(tod[, dat, do_add, do_omp])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tod2map_simple</span></code></a>(tod, dat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">todmap_omp</span></code></a>(tod, dat)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.write" title="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>([fname])</p></td>
@@ -196,13 +212,46 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps">
 <span class="sig-name descname"><span class="pre">r_th_maps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.r_th_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map">
+<span class="sig-name descname"><span class="pre">set_tod2map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">todvec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.set_tod2map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which method of tod2map to use.  options include simple (1 proc), omp (everyone makes a map copy), everyone (everyone loops through
+all the data but assigns only to their own piece), atomic (no map copy, accumulate via atomic adds), and cached (every thread has a sticky
+copy of the map).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map">
 <span class="sig-name descname"><span class="pre">tod2map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_omp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.tod2map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic">
+<span class="sig-name descname"><span class="pre">tod2map_atomic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.tod2map_atomic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old">
+<span class="sig-name descname"><span class="pre">tod2map_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_omp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.tod2map_old"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple">
+<span class="sig-name descname"><span class="pre">tod2map_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.tod2map_simple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp">
+<span class="sig-name descname"><span class="pre">todmap_omp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minkasi_wrapper/extern/minkasi/minkasi.html#SkyMap.todmap_omp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -222,7 +271,33 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
 <ul>
-<li><a class="reference internal" href="#">SkyMap</a></li>
+<li><a class="reference internal" href="#">SkyMap</a><ul>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap"><code class="docutils literal notranslate"><span class="pre">SkyMap</span></code></a><ul>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.assign"><code class="docutils literal notranslate"><span class="pre">SkyMap.assign()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.axpy"><code class="docutils literal notranslate"><span class="pre">SkyMap.axpy()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.clear"><code class="docutils literal notranslate"><span class="pre">SkyMap.clear()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.clear_caches"><code class="docutils literal notranslate"><span class="pre">SkyMap.clear_caches()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.copy"><code class="docutils literal notranslate"><span class="pre">SkyMap.copy()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.dot"><code class="docutils literal notranslate"><span class="pre">SkyMap.dot()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.get_caches"><code class="docutils literal notranslate"><span class="pre">SkyMap.get_caches()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.get_pix"><code class="docutils literal notranslate"><span class="pre">SkyMap.get_pix()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.invert"><code class="docutils literal notranslate"><span class="pre">SkyMap.invert()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.map2tod"><code class="docutils literal notranslate"><span class="pre">SkyMap.map2tod()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.mpi_reduce"><code class="docutils literal notranslate"><span class="pre">SkyMap.mpi_reduce()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.pix_from_radec"><code class="docutils literal notranslate"><span class="pre">SkyMap.pix_from_radec()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.plot"><code class="docutils literal notranslate"><span class="pre">SkyMap.plot()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.r_th_maps"><code class="docutils literal notranslate"><span class="pre">SkyMap.r_th_maps()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.set_tod2map"><code class="docutils literal notranslate"><span class="pre">SkyMap.set_tod2map()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map"><code class="docutils literal notranslate"><span class="pre">SkyMap.tod2map()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_atomic"><code class="docutils literal notranslate"><span class="pre">SkyMap.tod2map_atomic()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_old"><code class="docutils literal notranslate"><span class="pre">SkyMap.tod2map_old()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.tod2map_simple"><code class="docutils literal notranslate"><span class="pre">SkyMap.tod2map_simple()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.todmap_omp"><code class="docutils literal notranslate"><span class="pre">SkyMap.todmap_omp()</span></code></a></li>
+<li><a class="reference internal" href="#minkasi_wrapper.extern.minkasi.minkasi.SkyMap.write"><code class="docutils literal notranslate"><span class="pre">SkyMap.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
@@ -236,9 +311,9 @@
        rel="nofollow">Page Source</a> &nbsp;
     <a href="#">Back to Top</a></p>
   <p>
-    &copy; Copyright 2022, Zhiyuan Ma.<br/>
-    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 4.5.0. &nbsp;
-    Last built 12 Apr 2022. <br/>
+    &copy; Copyright 2023, Zhiyuan Ma.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 6.1.3. &nbsp;
+    Last built 22 Mar 2023. <br/>
   </p>
 </footer>
   </body>
