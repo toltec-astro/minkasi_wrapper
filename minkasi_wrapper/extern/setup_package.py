@@ -17,6 +17,8 @@ def pkgconfig(package, kw):
     flag_map = {'-I': 'include_dirs', '-L': 'library_dirs', '-l': 'libraries'}
     output = subprocess.getoutput(
         'pkg-config --cflags --libs {}'.format(package))
+    if "fftw3 was not found" in output:
+        raise RuntimeError("cannot find FFTW3, abort")
     for token in output.strip().split():
         kw.setdefault(flag_map.get(token[:2]), []).append(token[2:])
     return kw
